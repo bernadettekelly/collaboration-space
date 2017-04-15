@@ -2,22 +2,37 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const {DATABASE_URL, PORT} = require('./config');
+const session = require('express-session');
 const usersRouter = require('./usersRouter');
+const profilesRouter = require('./profilesRouter');
 
 mongoose.Promise = global.Promise;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 var MongoStore = require('connect-mongo')(session);
+
+var sess = {
+  store: new MongoStore({ url: DATABASE_URL }),
+  secret: '12345abcde',
+  name: "SessionMgmt",
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    path: '/',
+    maxAge: 300000 //miliseconds
+  } 
+};
 app.use(session(sess));
 app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(express.static('public'));
 app.use('/users', usersRouter);
+app.use('/profiles', profilesRouter);
 
 let server;
 console.log(DATABASE_URL, PORT);
 
-funtion runServer(databaseURL=DATABASE_URL, port=PORT) {
+function runServer(databaseURL=DATABASE_URL, port=PORT) {
 	return new Promise((resolve, reject) => {
 		console.log(databaseURL, port);
 			mongoose.connect(databaseURL, (err) => {
