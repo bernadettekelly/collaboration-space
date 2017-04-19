@@ -45,6 +45,15 @@ describe('profile API resource', function() {
 	});
 
 	describe('POST endpoint', function() {
+		before(){
+			const newUser = {
+			username: faker.user.username;
+			password: faker.password
+	        }
+	    }
+	    after(){
+
+	    }
 		it('should add a new user', function() {
 			const newUser = {
 				firstName: faker.name.firstName(),
@@ -77,6 +86,26 @@ describe('profile API resource', function() {
                 });
 		});
 	});
+
+describe('POST endpoint', function() {
+	it('should log in user', function() {
+		const credentials = {username: newUser.username,
+	                         password: newUser.password}
+    	return chai.request(app)
+    	.post('/login')
+    	.send(credentials)
+    	.then(function(res) {
+    		res.should.have.a.status(201);
+    		res.should.be.json;
+    		res.body.should.be.a('object');
+    		res.body.should.include.keys(
+    			'id', 'name', 'Category', 'Location', 'Email', 'Phone', 'Bio');
+    	})
+    	.catch(err => {console.log(err)});
+
+    	
+	});
+});
 
 //	describe('GET endpoint,' function() {
 //		it ('should return profiles with right fields', function() {
@@ -147,26 +176,16 @@ describe('profile API resource', function() {
 //
 //	describe('DELETE enpoint', function() {
 //		it('should logout users', function() {
-//			const currentUser = {
-//				firstName: faker.name.firstName(),
-//				lastName: faker.name.lastName(),
-//				Category: faker.lorem.word(),
-//				Location: faker.lorem.word(),
-//				Email: faker.internet.email(),
-//				Phone: faker.phone.PhoneNumber(),
-//				Bio: faker.lorem.text()
-//			};
-//			return chai.request(app).delete(`/users/${user.session}`);
-//          	.then(user => {
-//          		user.firstname.should.be.null;
-//				user.lastName.should.be.null;
-//				user.body.Category.should.be.null;
-//				user.body.Location.should.be.null;
-//				user.body.Email.should.be.null;
-//				user.body.Phone.should.be.null;
-//				user.body.Bio.should.be.null;
-//          	})
-//          	.catch(err => {console.log(err)});
+//		    return chai.request(app).delete(`/users/${user.session}`);
+//			.post('/logout')
+//   		.send(newUser.username)
+//   		.then(function(res) {
+//			})
+//         	.then(res => {
+//         		 console.log("successful logout")
+//         		 res.should.have.status(201);
+//         	 })
+//         	 .catch(err => {console.log(err)});
 //		});
 //	});
 //	
