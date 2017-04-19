@@ -44,16 +44,17 @@ describe('profile API resource', function() {
 		return closeServer();
 	});
 
-	describe('POST endpoint', function() {
-		before(){
+	before(){
 			const newUser = {
 			username: faker.user.username;
-			password: faker.password
+			password: faker.password;
 	        }
 	    }
 	    after(){
 
 	    }
+
+	describe('POST endpoint', function() {
 		it('should add a new user', function() {
 			const newUser = {
 				firstName: faker.name.firstName(),
