@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const {DATABASE_URL, PORT} = require('./config');
 const session = require('express-session');
 const usersRouter = require('./usersRouter');
-const profilesRouter = require('./profilesRouter');
 
 mongoose.Promise = global.Promise;
 const morgan = require('morgan');
@@ -27,7 +26,6 @@ app.use(bodyParser.json());
 app.use(morgan('common'));
 app.use(express.static('public'));
 app.use('/users', usersRouter);
-app.use('/profiles', profilesRouter);
 
 let server;
 console.log(DATABASE_URL, PORT);

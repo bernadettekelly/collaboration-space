@@ -39,30 +39,23 @@ function profileData() {
 describe('profile API resource', function() {
 	before(function() {
 		return runServer();
+		
 	});
 	after(function() {
 		return closeServer();
 	});
-
-	before(){
-			const newUser = {
-			username: faker.user.username;
-			password: faker.password;
-	        }
-	    }
-	    after(){
-
-	    }
 
 	describe('POST endpoint', function() {
 		it('should add a new user', function() {
 			const newUser = {
 				firstName: faker.name.firstName(),
 				lastName: faker.name.lastName(),
+				username: faker.internet.userName(),
+				password: faker.internet.password(),
 				Category: faker.lorem.word(),
 				Location: faker.lorem.word(),
 				Email: faker.internet.email(),
-				Phone: faker.phone.PhoneNumber(),
+				Phone: faker.phone.phoneNumber(),
 				Bio: faker.lorem.text()
 			};
 			return chai.request(app)
@@ -90,11 +83,17 @@ describe('profile API resource', function() {
 
 describe('POST endpoint', function() {
 	it('should log in user', function() {
-		const credentials = {username: newUser.username,
-	                         password: newUser.password}
-    	return chai.request(app)
+		let credentials; 
+		return
+		User.findOne().exec().then(function(user) {
+			credentials.username =
+			user.username;
+			credentials.password = 
+			user.password;
+        return chai.request(app)
     	.post('/login')
     	.send(credentials)
+        })
     	.then(function(res) {
     		res.should.have.a.status(201);
     		res.should.be.json;
@@ -108,24 +107,25 @@ describe('POST endpoint', function() {
 	});
 });
 
-//	describe('GET endpoint,' function() {
-//		it ('should return profiles with right fields', function() {
-//			return chai.request(app)
-//			.get('/profile')
-//			.then(function(res) {
-//				res.should.have.a.status(200);
-//				res.should.be.json;
-//				res.body.profile.should.be.a('array');
-//				res.body.profile.should.have.length.of.at.least(1);
-//				res.body.profile.forEach(function(profile) {
-//                	profile.should.be.a('object');
-//                	profile.should.include.keys('_id', 'name', 'Category', 'Location', 'Email', 'Phone', 'Bio');
-//                })
-//            .catch(err => {console.log(err)});
-//            });
-//		});
-//	});
-//
+	describe('GET endpoint', function() {
+		it ('should return profiles with right fields', function() {
+			return chai.request(app)
+			.get('/users')
+			.then(function(res) {
+				res.should.have.a.status(200);
+				res.should.be.json;
+				res.body.should.be.a('array');
+				//res.body.should.have.length.of.at.least(1);
+				//res.body.forEach(function(user) {
+                //	user.should.be.a('object');
+                //	user.should.include.keys('_id', 'name', 'Category', 'Location', 'Email', 'Phone', 'Bio');
+                //})
+            })
+            .catch(err => {console.log(err)});
+            
+		});
+	});
+
 //	describe('PUT endpoint', function() {
 //		it('should update fields you send over', function() {
 //			const updateProfile = {
@@ -150,10 +150,10 @@ describe('POST endpoint', function() {
 //			})
 //			.then(res => {
 //				console.log("successful update");
-//    	     	res.should.have.status(201);
-//    	     	res.should.be.json;
-//    	     	res.body.should.be.a('object');
-//    	     	res.body.name.should.equal(
+ //   	     	res.should.have.status(201);
+ //   	     	res.should.be.json;
+ //   	     	res.body.should.be.a('object');
+ //   	     	res.body.name.should.equal(
 //				`${updateprofile.firstName} ${updateProfile.lastName}`);
 //				res.body.Category.should.equal(updateUser.Category);
 //				res.body.Location.should.equal(updateUser.Location);
@@ -172,23 +172,22 @@ describe('POST endpoint', function() {
 //				user.body.Bio.should.equal(updateUser.Bio);
 //			})
 //			.catch(err => {console.log(err)});
-//         });
+ //        });
 //	});
 //
 //	describe('DELETE enpoint', function() {
 //		it('should logout users', function() {
 //		    return chai.request(app).delete(`/users/${user.session}`);
 //			.post('/logout')
-//   		.send(newUser.username)
-//   		.then(function(res) {
+ //  		.send(newUser.username)
+ //  		.then(function(res) {
 //			})
-//         	.then(res => {
-//         		 console.log("successful logout")
-//         		 res.should.have.status(201);
-//         	 })
-//         	 .catch(err => {console.log(err)});
+ //        	.then(res => {
+ //        		 console.log("successful logout")
+ //        		 res.should.have.status(201);
+ //        	 })
+ //        	 .catch(err => {console.log(err)});
 //		});
 //	});
 //	
-//
 //
