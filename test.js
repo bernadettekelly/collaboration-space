@@ -107,28 +107,28 @@ describe('POST endpoint', function() {
 	});
 });
 
-	describe('GET endpoint', function() {
-		it ('should return profiles with right fields', function() {
-			return chai.request(app)
-			.get('/users')
-			.then(function(res) {
-				res.should.have.a.status(200);
-				res.should.be.json;
-				res.body.should.be.a('array');
-				//res.body.should.have.length.of.at.least(1);
-				//res.body.forEach(function(user) {
-                //	user.should.be.a('object');
-                //	user.should.include.keys('_id', 'name', 'Category', 'Location', 'Email', 'Phone', 'Bio');
-                //})
-            })
-            .catch(err => {console.log(err)});
-            
-		});
-	});
-
+	//describe('GET endpoint', function() {
+	//	it ('should return profiles with right fields', function() {
+	//		return chai.request(app)
+	//		.get('/users')
+	//		.then(function(res) {
+	//			res.should.have.a.status(200);
+	//			res.should.be.json;
+	//			res.body.should.be.a('array');
+	//			//res.body.should.have.length.of.at.least(1);
+	//			//res.body.forEach(function(user) {
+    //            //	user.should.be.a('object');
+    //            //	user.should.include.keys('_id', 'name', 'Category', 'Location', 'Email', 'Phone', 'Bio');
+    //            //})
+    //        })
+    //        .catch(err => {console.log(err)});
+    //        
+	//	});
+	//});
+//
 //	describe('PUT endpoint', function() {
 //		it('should update fields you send over', function() {
-//			const updateProfile = {
+//			const updateUser = {
 //				firstName: 'Annie',
 //				lastName: 'Williams',
 //				Category: 'Vocalist',
@@ -137,34 +137,34 @@ describe('POST endpoint', function() {
 //				Phone: '111-111-1111',
 //				Bio: 'Example bio'
 //			};
-//			console.log(updateProfile);
+//			console.log(updateUser);
 //
 //			return User
 //			.findOne()
 //			.exec()
-//			.then(post => {
-//				updateProfile.id = profile.id
+//			.then(user => {
+//				updateUser.id = user.id
 //				return chai.request(app)
-//				.put(`/profile/${profile.id}`)
-//				.send(updateProfile);
+//				.put(`/users/${user.id}`)
+//				.send(updateUser);
 //			})
 //			.then(res => {
 //				console.log("successful update");
- //   	     	res.should.have.status(201);
- //   	     	res.should.be.json;
- //   	     	res.body.should.be.a('object');
- //   	     	res.body.name.should.equal(
-//				`${updateprofile.firstName} ${updateProfile.lastName}`);
+//    	     	res.should.have.status(201);
+//    	     	res.should.be.json;
+//    	     	res.body.should.be.a('object');
+//    	     	res.body.name.should.equal(
+//				`${updateUser.firstName} ${updateUser.lastName}`);
 //				res.body.Category.should.equal(updateUser.Category);
 //				res.body.Location.should.equal(updateUser.Location);
 //				res.body.Email.should.equal(updateUser.Email);
 //				res.body.Phone.should.equal(updateUser.Phone);
 //				res.body.Bio.should.equal(updateUser.Bio);
-//				return profile.findById(res.body.id)exec();
+//				return profile.findById(res.body.id).exec();
 //			})
-//			then(post => {
-//				user.firstname.should.equal(updateProfile.firstName);
-//				user.lastName.should.equal(updateProfile.lastName);
+//			.then(user => {
+//				user.firstname.should.equal(updateUser.firstName);
+//				user.lastName.should.equal(updateUser.lastName);
 //				user.body.Category.should.equal(updateUser.Category);
 //				user.body.Location.should.equal(updateUser.Location);
 //				user.body.Email.should.equal(updateUser.Email);
@@ -172,22 +172,22 @@ describe('POST endpoint', function() {
 //				user.body.Bio.should.equal(updateUser.Bio);
 //			})
 //			.catch(err => {console.log(err)});
- //        });
+//         });
 //	});
 //
-//	describe('DELETE enpoint', function() {
-//		it('should logout users', function() {
-//		    return chai.request(app).delete(`/users/${user.session}`);
-//			.post('/logout')
- //  		.send(newUser.username)
- //  		.then(function(res) {
-//			})
- //        	.then(res => {
- //        		 console.log("successful logout")
- //        		 res.should.have.status(201);
- //        	 })
- //        	 .catch(err => {console.log(err)});
-//		});
-//	});
-//	
-//
+	describe('DELETE enpoint', function() {
+		it('should logout users', function(user) {
+		    return chai.request(app).delete(`/users/${user.id}`);
+			.post('/logout')
+  		    .send()
+  		    .then(function(res) {			
+  		    })
+        	.then(res => {
+        		 console.log("successful logout")
+        		 res.should.have.status(201);
+        	 })
+        	 .catch(err => {console.log(err)});
+		});
+	});
+	
+
