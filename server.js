@@ -21,6 +21,7 @@ var sess = {
     maxAge: 300000 //miliseconds
   } 
 };
+
 app.use(session(sess));
 app.use(bodyParser.json());
 app.use(morgan('common'));
@@ -28,7 +29,6 @@ app.use(express.static('public'));
 app.use('/users', usersRouter);
 
 let server;
-console.log(DATABASE_URL, PORT);
 
 function runServer(databaseURL=DATABASE_URL, port=PORT) {
 	return new Promise((resolve, reject) => {
