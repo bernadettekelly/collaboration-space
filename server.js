@@ -29,6 +29,7 @@ app.use(express.static('public'));
 app.use('/users', usersRouter);
 
 let server;
+console.log(DATABASE_URL, PORT);
 
 function runServer(databaseURL=DATABASE_URL, port=PORT) {
 	return new Promise((resolve, reject) => {
