@@ -15,7 +15,6 @@ const UserSchema = mongoose.Schema({
 	},
 	firstName: {type: String, default: ""},
 	lastName: {type: String, default: ""},
-	
 	Category: {
         type: Array
 	},
@@ -26,7 +25,7 @@ const UserSchema = mongoose.Schema({
 		type: String
 	},
 	Phone: {
-		type: Number
+		type: String
 	},
 	Bio: {
 		type: String
@@ -35,14 +34,14 @@ const UserSchema = mongoose.Schema({
 
 UserSchema.methods.apiRepr = function() {
 	return {
+		id: this._id || '',
 		username: this.username || '',
-		firstName: this.firstName || '',
-		lastName: this.lastName || '',
+		name: `${this.firstName} ${this.lastName}` || '',
 		Category: this.Category || '',
-		Location: thid.Location || '',
+		Location: this.Location || '',
 		Email: this.Email || '',
 		Phone: this.Phone || '',
-        Bio: this.Bio || ''
+    Bio: this.Bio || ''
 	};
 }
 
@@ -54,6 +53,6 @@ UserSchema.statics.hashPassword = function(password) {
 	return bcrypt.hash(password, 10)
 }
 
-const User = mongoose.model('userdata', UserSchema);
+const User = mongoose.model('user', UserSchema);
 
 module.exports = {User};
