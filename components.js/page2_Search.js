@@ -39,6 +39,18 @@ render(){
                 </section>
 				<button type="submit" className="Search">Search</button>
 			</form>
+			<section id = "results_container">
+				<div className="box">
+					<article className="media">
+						<div className="media-left">
+						</div>
+						<div className="media-content">
+							<div className="content">
+										
+							</div>
+						</div>
+					</article>
+				</div>
 		</div>
 	);
 };
