@@ -25,7 +25,7 @@ var sess = {
 app.use(session(sess));
 app.use(bodyParser.json());
 app.use(morgan('common'));
-app.use(express.static('public'));
+app.use(express.static('build'));
 app.use('/users', usersRouter);
 
 let server;
