@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#header_container {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+.Location_Dropdown {
+	margin-top: 15px;
+}
+
+#SignInSection {
+	margin-left: 20px;
+}
+
+.SignInTitle {
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.EditTitle {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#SearchSection {
+	margin-left: 20px;
+}
+
+.SignUpTitle {
+	font-size: 22px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.Location_Dropdown {
+	margin-bottom: 15px;
+}
+
+body {
+	background-image: url("brickwall_@2X.png");
+}
+
