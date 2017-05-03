@@ -10,13 +10,13 @@ class Edit extends React.Component {
 
 	}
 
-   componentDidUpdate(){
-      if(this.props.updatedData.userData) hashHistory.push('/Search');
-    }
+   //componentDidUpdate(){
+   //   if(this.props.editData.userData) hashHistory.push('/Search');
+   // }
 
   fetchEditSuccess(e) {
   e.preventDefault()  
-  this.props.dispatch(userActions.fetchEditSuccess);
+  this.props.dispatch(userActions.fetchEditSuccess());
   }
 
 render(){
@@ -140,7 +140,7 @@ render(){
 };
 
 const mapStateToProps = (state, props) => ({
-	updatedData: state
+	editData: state
 });
 
 export default connect(mapStateToProps)(Edit);

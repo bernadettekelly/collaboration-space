@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import {connect, hashHistory} from 'react-router';
 
 export default function Title() {
 	return (
@@ -11,4 +11,5 @@ export default function Title() {
 		</div>
     );
 };
+
 

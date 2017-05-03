@@ -12,11 +12,11 @@ class SignUp extends React.Component {
 	}
 
   componentDidUpdate() {
-    if(this.props.updatedData.userData) hashHistory.push('/Search');
+    if(this.props.SignUpData.userData) hashHistory.push('/Search');
   }
   fetchSignUpSuccess(e) {
   e.preventDefault()
-  this.props.dispatch(userActions.fetchSignUpSuccess);
+  this.props.dispatch(userActions.fetchSignUpSuccess());
   }
 
 render(){
@@ -165,7 +165,7 @@ render(){
 };
 
 const mapStateToProps = (state, props) => ({
-	updatedData: state
+	SignUpData: state
 });
 
 export default connect(mapStateToProps)(SignUp);

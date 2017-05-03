@@ -13,7 +13,7 @@ var MongoStore = require('connect-mongo')(session);
 var sess = {
   store: new MongoStore({ url: DATABASE_URL }),
   secret: '12345abcde',
-  name: "SessionMgmt",
+  name: "CollabSpc",
   resave: false,
   saveUninitialized: true,
   cookie: { 

@@ -7,9 +7,9 @@ var URL_USERS_EDITS = "http://localhost:8080/users/"
 import qwest from 'qwest';
 
 
-export const fetchSignUp = () => {
+export const fetchSignUp = () => dispatch => {
 	console.log('execute signup');
-	qwest.post(URL_USERS, {
+	 qwest.post(URL_USERS, {
 			firstName: firstName, 
 			lastName: lastName, 
 			username: username, 
@@ -18,8 +18,9 @@ export const fetchSignUp = () => {
 			location: location, 
 			phone: phone, 
 			bio: bio
-		}, null)
-	.then((data) => {
+		},	{dataType: 'json'})
+		//}, null)
+	.then((xhr, data) => {
 		console.log(data);
 		dispatch(fetchSignUpSuccess(data));
 	})
@@ -29,13 +30,13 @@ export const fetchSignUp = () => {
 	})
 }
 
-export const fetchLogIn = (username, password) => {
+export const fetchLogIn = (username, password) => dispatch => {
 	console.log('execute login');
-	qwest.post(URL_LOGIN, JSON.stringify({
-			username: 'audrey1', 
-			password: 'cat'
-		}), null)
-	.then((data) => {
+	qwest.post(URL_LOGIN, {
+		username: 'audrey1', 
+		password: 'cat'
+	}, {dataType: 'json'})
+	.then((xhr, data) => {
 		console.log('successful login');
 		console.log(data);
 		dispatch(fetchLogInSuccess(data));
@@ -46,21 +47,40 @@ export const fetchLogIn = (username, password) => {
 	})
 }
 
-export const fetchLogOut = () => {
+export const fetchLogOut = () => dispatch => {
+	console.log('execute logout');
 	qwest.delete(URL_LOGOUT, {
 			username: username
-		}, null)
-    .then((data) => {
+		},	{dataType: 'json'})
+
+    .then((xhr, data) => {
 		console.log(data);
 		dispatch(fetchLogOutSuccess(data));
 	})
 	.catch((err) => {
 		console.error(err);
 		dispatch(fetchLogOutError());
+
 	})
 }
 
 export const Edit = () => {
+	console.log('execute edit');
+	qwest.get(URL_ID, {
+		firstName: firstName, 
+			lastName: lastName,  
+			category: category, 
+			location: location, 
+			phone: phone, 
+			bio: bio
+		}, {dataType: 'json'})
+	.then((data) => {
+		dispatch(fetchSearchSuccess.id.value(data));
+	})
+	.catch((err) => {
+  		console.error(err);
+		dispatch(fetchSearchError());
+  	})
 	qwest.put(URL_USERS_EDITS, {
 			firstName: firstName, 
 			lastName: lastName,  
@@ -68,7 +88,7 @@ export const Edit = () => {
 			location: location, 
 			phone: phone, 
 			bio: bio
-		}, null)
+		}, {dataType: 'json'})
 	.then((data) => {
 		console.log(data);
 		dispatch(fetchEditSuccess(data));
@@ -80,16 +100,18 @@ export const Edit = () => {
 	//NEED TO SHOW VALUE OF PREVIOUSLY SAVED PROFILE INFO
 }
 
-  export const Search = (firstName, LastName, category, location, phone, bio) => {
-  	qwest.get(URL_USERS, {
+  export const Search = (firstName, LastName, category, location, phone, bio) => dispatch => {
+  	console.login('execute search');
+  	 qwest.get(URL_USERS, {
   			firstName: firstName, 
 			lastName: lastName,  
 			category: category, 
 			location: location, 
 			phone: phone, 
 			bio: bio
-		}, null)
-  	.then((data) => {
+	   },	{dataType: 'json'})
+		//}, null)
+  	.then((xhr, data) => {
   		console.log(data);
 		dispatch(fetchSearchSuccess(data));
   	})
@@ -148,10 +170,10 @@ export const fetchEditError = (userData) => ({
 export const FETCH_SEARCH_SUCCESS = 'FETCH_SEARCH_SUCCESS';
 export const fetchSearchSuccess = (userData) => ({
 	type: FETCH_SEARCH_SUCCESS,
-	Data
+	userData
 });
 export const FETCH_SEARCH_ERROR = 'FETCH_SEARCH_ERROR';
 export const fetchSearchError = (userData) => ({
 	type: FETCH_SEARCH_ERROR,
-	Data
+	userData
 });

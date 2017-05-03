@@ -11,13 +11,14 @@ class SignIn extends React.Component {
     }
 
     componentDidUpdate(){
-    	if(this.props.updatedData.userData) hashHistory.push('/Search');
+    	console.log("::UPDATED::", this.props.loginData.userData);
+    	if(this.props.loginData.userData) hashHistory.push('/Search');
     }
 
     fetchLogInSuccess(e) {
     	e.preventDefault();
     	console.log('Click on login');
-    	this.props.dispatch(userActions.fetchLogIn);
+    	this.props.dispatch(userActions.fetchLogIn());
     }
 
 render(){
@@ -58,7 +59,7 @@ render(){
 };
 
 const mapStateToProps = (state, props) => ({
-	updatedData: state
+	loginData: state
 });
 
 export default connect(mapStateToProps)(SignIn);
