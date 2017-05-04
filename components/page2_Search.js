@@ -13,13 +13,15 @@ class Search extends React.Component {
 
 	 componentDidUpdate(){
     	if(this.props.searchData.userData) hashHistory.push('/Search');
-    	if(this.props.logOutData.userData) hashHistory.push('/');
+    	//if(this.props.logOutData.userData) hashHistory.push('/');
     }
 
 	fetchSearchSuccess(e) {
+
 	e.preventDefault()
-	this.props.dispatch(userActions.fetchSearchSuccess());
-	this.props.dispatch(userActions.fetchLogOutSuccess());
+	console.log("xyz");
+	this.props.dispatch(userActions.fetchSearchSuccess(this.refs.instrumentalist.value, this.refs.vocalist.value, this.refs.composer.value, this.refs.manhattan.value, this.refs.queens.value, this.refs.brooklyn.value, this.refs.bronx.value, this.refs.staten_island.value ));
+	//this.props.dispatch(userActions.fetchLogOutSuccess());
 	}
 
 render(){
@@ -35,19 +37,19 @@ render(){
 					<section className="Category_Dropdown">
 						<label htmlFor="Category-Dropdown">Type</label>
 						<select>
-							<option value="Instrumentalist">Instrumentalist</option>
-							<option value="Vocalist">Vocalist</option>
-							<option value="Composer">Composer</option>
+							<option value="Instrumentalist" ref = "instrumentalist">Instrumentalist</option>
+							<option value="Vocalist" ref = "vocalist">Vocalist</option>
+							<option value="Composer" ref = "composer">Composer</option>
 						</select>
 					</section>
 					<section className="Location_Dropdown">
                     	<label htmlFor="Location">Location</label>
 						<select>
-							<option value="Manhattan">Manhattan</option>
-							<option value="Queens">Queens</option>
-                            <option value="Brooklyn">Brooklyn</option>
-                            <option value="Bronx">Bronx</option>
-                            <option value="Staten Island">Staten Island</option>
+							<option value="Manhattan" ref = "manhattan">Manhattan</option>
+							<option value="Queens" ref = "queens">Queens</option>
+                            <option value="Brooklyn" ref = "brooklyn">Brooklyn</option>
+                            <option value="Bronx" ref = "bronx">Bronx</option>
+                            <option value="Staten Island" ref = "staten_island">Staten Island</option>
                         </select>
                 	</section>
 					<a onClick={this.fetchSearchSuccess}>Search</a>
