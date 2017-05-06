@@ -17,11 +17,11 @@ class Search extends React.Component {
 	}
 
 	fetchLogOut(e){
-		this.props.dispatch(userActions.fetchLogout())
+		this.props.dispatch(userActions.fetchLogOut())
 	}
 
 	componentDidUpdate() {
-    if(this.props.appData.userData=null) hashHistory.push('/');
+    if(this.props.appData.userData==null) hashHistory.push('/');
   }
 
 render(){
@@ -33,7 +33,7 @@ render(){
 			<section id="SearchSection">
 				<div className="nav-right nav-menu">
   					<Link className="nav-item is-tab" to="Edit">Edit Profile</Link>
-  					<a className="nav-item is-tab" onClick={this.fetchLogOutSuccess}>Log Out</a>
+  					<a className="nav-item is-tab" onClick={this.fetchLogOut}>Log Out</a>
   				</div>
   				<form id="SearchForm" form action="#" method="post">
 					<section className="Category_Dropdown">

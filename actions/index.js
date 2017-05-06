@@ -50,7 +50,6 @@ export const fetchLogIn = (username, password) => dispatch => {
 export const fetchLogOut = () => dispatch => {
 	console.log('execute logout');
 	qwest.delete(URL_LOGOUT, {
-			username: username
 		},	{dataType: 'json'})
 
     .then((xhr, data) => {

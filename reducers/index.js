@@ -22,7 +22,7 @@ export const appReducer = (state=initialSignUpState, action) => {
 	}
 
 	if (action.type === userActions.FETCH_LOGOUT_SUCCESS) {
-		return {...state, userData: action.userData, error: null};
+		return {...state, userData: null, error: null};
 	}
 	if (action.type === userActions.FETCH_LOGOUT_ERROR){
 		return {...state, error: action.error};
