@@ -2,10 +2,11 @@ import * as userActions from '../actions/index';
 
 const initialSignUpState = {
 	userData: {},
+	candidates: [],
 	error: null
 };
 
-export const signUpReducer = (state=initialSignUpState, action) => {
+export const appReducer = (state=initialSignUpState, action) => {
 	if (action.type === userActions.FETCH_SIGNUP_SUCCESS) {
 		return {...state, userData: action.userData, error: null};
 	}
@@ -35,7 +36,7 @@ export const signUpReducer = (state=initialSignUpState, action) => {
 	}
 
 	if (action.type === userActions.FETCH_SEARCH_SUCCESS) {
-		return {...state, userData: action.userData, error: null};
+		return {...state, candidates: action.candidates, error: null};
 	}
 	if (action.type === userActions.FETCH_SEARCH_ERROR){
 		return {...state, error: action.error};
@@ -43,13 +44,3 @@ export const signUpReducer = (state=initialSignUpState, action) => {
 
 	return state;
 };
-
-const initialLoginState = {
-	userData: {},
-	error: null
-};
-
-
-
-
-

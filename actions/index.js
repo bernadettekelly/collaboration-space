@@ -7,7 +7,7 @@ var URL_USERS_EDITS = "http://localhost:8080/users/"
 import qwest from 'qwest';
 
 
-export const fetchSignUp = () => dispatch => {
+export const fetchSignUp = (firstName, lastName, category, location, email, phone, bio, username, password) => dispatch => {
 	console.log('execute signup');
 	 qwest.post(URL_USERS, {
 			firstName: firstName, 
@@ -33,8 +33,8 @@ export const fetchSignUp = () => dispatch => {
 export const fetchLogIn = (username, password) => dispatch => {
 	console.log('execute login');
 	qwest.post(URL_LOGIN, {
-		username: 'audrey1', 
-		password: 'cat'
+		username: username, 
+		password: password
 	}, {dataType: 'json'})
 	.then((xhr, data) => {
 		console.log('successful login');
@@ -64,28 +64,35 @@ export const fetchLogOut = () => dispatch => {
 	})
 }
 
-export const Edit = () => {
-	console.log('execute edit');
+export const fetchUserData = (firstName, lastName, category, location, email, phone, bio) => dispatch => {
+	console.log('show saved data');
 	qwest.get(URL_ID, {
-		firstName: firstName, 
+		    firstName: firstName, 
 			lastName: lastName,  
 			category: category, 
 			location: location, 
+			email: email,
 			phone: phone, 
 			bio: bio
 		}, {dataType: 'json'})
 	.then((data) => {
+		console.log(data);
 		dispatch(fetchSearchSuccess.id.value(data));
 	})
 	.catch((err) => {
   		console.error(err);
 		dispatch(fetchSearchError());
   	})
+}
+
+export const Edit = (firstName, lastName, category, location, email, phone, bio) => dispatch => {
+	console.log('execute edit');
 	qwest.put(URL_USERS_EDITS, {
 			firstName: firstName, 
 			lastName: lastName,  
 			category: category, 
-			location: location, 
+			location: location,
+			email: email, 
 			phone: phone, 
 			bio: bio
 		}, {dataType: 'json'})
@@ -100,24 +107,19 @@ export const Edit = () => {
 	//NEED TO SHOW VALUE OF PREVIOUSLY SAVED PROFILE INFO
 }
 
-  export const Search = (firstName, LastName, category, location, phone, bio) => dispatch => {
-  	console.login('execute search');
+  export const fetchSearch = (category, location) => dispatch => {
+  	console.log('execute search');
   	 qwest.get(URL_USERS, {
-  			firstName: firstName, 
-			lastName: lastName,  
-			category: category, 
-			location: location, 
-			phone: phone, 
-			bio: bio
-	   },	{dataType: 'json'})
-		//}, null)
-  	.then((xhr, data) => {
+  			category: category, 
+			location: location 
+	   })
+	.then((xhr, data) => {
   		console.log(data);
 		dispatch(fetchSearchSuccess(data));
   	})
   	.catch((err) => {
   		console.error(err);
-		dispatch(fetchSearchError());
+		dispatch(fetchSearchError(err));
   	})
   	
   }
@@ -140,7 +142,7 @@ export const fetchLogInSuccess = (userData) => ({
 	userData
 });
 export const FETCH_LOGIN_ERROR = 'FETCH_LOGIN_ERROR';
-export const fetchLogInError = (userData) => ({
+export const fetchLogInError = (error) => ({
 	type: FETCH_LOGIN_ERROR,
 	error
 });
@@ -151,9 +153,9 @@ export const fetchLogOutSuccess = (userData) => ({
 	userData
 });
 export const FETCH_LOGOUT_ERROR = 'FETCH_LOGOUT_ERROR';
-export const fetchLogOutError = (userData) => ({
+export const fetchLogOutError = (error) => ({
 	type: FETCH_LOGOUT_ERROR,
-	userData
+	error
 });
 
 export const FETCH_EDIT_SUCCESS = 'FETCH_EDIT_SUCCESS';
@@ -162,18 +164,18 @@ export const fetchEditSuccess = (userData) => ({
 	userData
 });
 export const FETCH_EDIT_ERROR = 'FETCH_EDIT_ERROR';
-export const fetchEditError = (userData) => ({
+export const fetchEditError = (error) => ({
 	type: FETCH_EDIT_ERROR,
-	userData
+	error
 });
 
 export const FETCH_SEARCH_SUCCESS = 'FETCH_SEARCH_SUCCESS';
-export const fetchSearchSuccess = (userData) => ({
+export const fetchSearchSuccess = (candidates) => ({
 	type: FETCH_SEARCH_SUCCESS,
-	userData
+	candidates
 });
 export const FETCH_SEARCH_ERROR = 'FETCH_SEARCH_ERROR';
-export const fetchSearchError = (userData) => ({
+export const fetchSearchError = (error) => ({
 	type: FETCH_SEARCH_ERROR,
-	userData
+	error
 });

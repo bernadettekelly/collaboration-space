@@ -10,18 +10,19 @@ class SignIn extends React.Component {
 		this.fetchLogInSuccess = this.fetchLogInSuccess.bind(this);
     }
 
-    componentDidUpdate(){
-    	console.log("::UPDATED::", this.props.loginData.userData);
-    	if(this.props.loginData.userData) hashHistory.push('/Search');
-    }
+    //componentDidUpdate(){
+    //	console.log("::UPDATED::", this.props.appData.userData);
+    //	if(this.props.appData.userData) hashHistory.push('/Search');
+    //}
 
     fetchLogInSuccess(e) {
     	e.preventDefault();
     	console.log('Click on login');
-    	this.props.dispatch(userActions.fetchLogIn());
+    	this.props.dispatch(userActions.fetchLogIn(this.refs.username.value, this.refs.password.value));
     }
 
 render(){
+	const {appData} = this.props; 
 	return (
 		<div>
 			<Title/>
@@ -32,7 +33,7 @@ render(){
 						<div className="field">
   							<label htmlFor="label">Username</label>
   							<p className="control">
-    						<input className="input" type="text"/>
+    						<input className="input" type="text" ref="username"/>
   							</p>
 						</div>
 					</div>
@@ -43,7 +44,7 @@ render(){
 						<div className="field">
   							<label htmlFor="label">Password</label>
   							<p className="control">
-    						<input className="input" type="text"/>
+    						<input className="input" type="text" ref="password"/>
   							</p>
 						</div>
 					</div>
@@ -59,7 +60,7 @@ render(){
 };
 
 const mapStateToProps = (state, props) => ({
-	loginData: state
+	appData: state
 });
 
 export default connect(mapStateToProps)(SignIn);

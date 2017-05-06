@@ -10,10 +10,12 @@
 
 h1 {
 	font-size: 24px;
+	padding-top: 10px;
 }
 
 h2 {
-	
+	color: #00d1b2;
+	font-size: 18px;
 }
 
 .Location_Dropdown {
@@ -52,5 +54,14 @@ h2 {
 
 body {
 	background-image: url("brickwall_@2X.png");
+	height: 2000px;
 }
+
+#results_container {
+	margin-top: 20px;
+}
+
+
+
+
 

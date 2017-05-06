@@ -8,10 +8,10 @@
 
 //describe('Search component', function(){
 //	it('Renders the results', function() {
-//  	const userData ='userDataExample';
+//  	const user ='userDataExample';
 //		
 //		const renderer = TestUtils.createRenderer();
-//		renderer.render(<Search userData={userData}/>);
+//		renderer.render(<Search user={user}/>);
 //		const result = renderer.getRenderOutput();
 //  });
 //});

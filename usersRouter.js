@@ -10,6 +10,19 @@ const router = express.Router();
 
 router.use(jsonParser);
 
+router.get('/', (req, res) => {
+	User
+	.find({Category: req.query.category, Location: req.query.location})
+	.exec()
+	.then(user => {
+		res.status(200).json(user);
+	})
+	.catch(err => {
+		console.log(err);
+		res.status(500).json({error: 'something went wrong'});
+	});
+});
+
 router.post('/', (req, res) => {
 	if (!req.body) {
 		return res.status(400).json({message: 'Nothing in body'});
@@ -91,19 +104,6 @@ router.post('/login', function (req, res) {
 		}
 		req.session.userID = user._id;
 		return res.status(200).send(user.apiRepr());
-	});
-});
-
-router.get('/', (req, res) => {
-	User
-	.find()
-	.exec()
-	.then(user => {
-		res.status(200).json(user);
-	})
-	.catch(err => {
-		console.log(err);
-		res.status(500).json({error: 'something went wrong'});
 	});
 });
 
