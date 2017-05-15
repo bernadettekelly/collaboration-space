@@ -107,11 +107,25 @@ router.post('/login', function (req, res) {
 	});
 });
 
-router.put('/id/:id', (req, res) => {
+router.get('/id', (req, res) => {
+	console.log(req.session.userID);
+	User.findOne({_id:req.session.userID})
+	.exec()
+	.then(user => {
+		res.status(200).json(user);
+	})
+	.catch(err => {
+		console.log(err);
+		res.status(500).json({error: 'something went wrong'});
+	});
+});
+	
+
+router.put('/', (req, res) => {
 	const requiredFields = ['firstName', 'lastName', 'Category', 'Location', 'Email', 'Phone', 'Bio'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
-		if(!(field in re.body)) {
+		if(!(field in req.body)) {
 			const message = `Missing \`${field}\` in request body`
 			console.error(message);
 			return res.status(400).send(message);
@@ -120,7 +134,7 @@ router.put('/id/:id', (req, res) => {
 
 	console.log(`Updating profile with id \`${req.params.id}\``);
 	User
-	.findByIdAndUpdate(req.params.id, {$set: {
+	.findByIdAndUpdate(req.session.userID, {$set: {
 		firstName: req.body.firstName,
 		lastName: req.body.lastName,
 		Category: req.body.Category,
@@ -130,12 +144,12 @@ router.put('/id/:id', (req, res) => {
 		Bio: req.body.Bio
 	}})
 
-	.then(User =>
-		User.findById(req.params.id)
+	.then((user) =>
+		User.findById(req.session.userID)
 			.exec()
-			.then(User => res.status(201).json(User.apiRepr()))
+			.then(user => res.status(201).json(user.apiRepr()))
 		 )
-	.catch(err => res.status(500).json({message: 'Internal server error'}));
+	.catch(err => res.status(500).json({message: err}));
 });
 
 

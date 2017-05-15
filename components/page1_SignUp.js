@@ -11,12 +11,12 @@ class SignUp extends React.Component {
 
 	}
 
-  //componentDidUpdate() {
-  //  if(this.props.appData.userData) hashHistory.push('/Search');
-  //}
+  componentDidUpdate() {
+    if(this.props.appData.userData) hashHistory.push('/Search');
+  }
   fetchSignUpSuccess(e) {
   e.preventDefault()
-  this.props.dispatch(userActions.fetchSignUp(this.refs.first_name.value, this.refs.last_name.value, this.refs.email.value, this.refs.phone.value, this.refs.type.value, this.refs.location.value, this.refs.about.value, this.refs.username.value, this.refs.password.value));
+  this.props.dispatch(userActions.fetchSignUp(this.refs.first_name.value, this.refs.last_name.value, this.refs.username.value, this.refs.password.value, this.refs.email.value, this.refs.category.value, this.refs.location.value, this.refs.phone.value, this.refs.bio.value));
   }
 
 render(){
@@ -25,7 +25,7 @@ render(){
 		<div>
         <div className="container">
         <section>
-            <div className="columns">
+            <div className="columns is-gapless is-multiline is-mobile">
               <div className="column is-one-quarter">
                   <div className="SignUpTitle">Sign Up</div>
             	       <div className="field">
@@ -35,9 +35,11 @@ render(){
   					         </p>
                      </div>
               </div>
+                <div className="column is-three-quarters">
+                  <div className="fun"><img src="/assets/imgres.png"/></div>
+                </div>
             </div>
-
-             <div className="columns">
+             <div className="columns is-gapless is-multiline is-mobile">
                  <div className="column is-one-quarter">
                   <div className="field">
   					      <label htmlFor="label">Last Name</label>
@@ -52,8 +54,10 @@ render(){
   					     </p>
 				         </div>
                </div>
+               <div className="column is-three-quarters">
+                <div className="fun_darth"><img src="/assets/darth.png"/></div>
+               </div>
             </div>
-
             <div className="columns">
                 <div className="column is-one-quarter">
                   <div className="field">
@@ -93,7 +97,7 @@ render(){
                 </div>
             </div>
 
-            <div className="columns">
+            <div className="columns is-gapless is-multiline is-mobile">
               <div className="column is-one-quarter">
                 <div className="field">
   					       <label htmlFor="label">Phone Number</label>
@@ -101,6 +105,9 @@ render(){
     					     <input className="input is-primary" type="text" ref = "phone"/>
   					       </p>
 				        </div>
+             </div>
+             <div className="column is-three-quarters">
+              <div className="fun_band"><img src="/assets/band.gif"/></div>
              </div>
             </div>
 
@@ -129,7 +136,7 @@ render(){
   					<label htmlFor="label">Type</label>
   						<p className="control">
     						<span className="select">
-      							<select ref="type">
+      							<select ref="category">
         							<option value="Instrumentalist">Instrumentalist</option>
                       <option value="Vocalist">Vocalist</option>
                       <option value="Composer">Composer</option>
@@ -145,7 +152,7 @@ render(){
           <div className="field">
   					<label htmlFor="label">About You</label>
   						<p className="control">
-    						<textarea className="textarea is-primary" ref = "about"></textarea>
+    						<textarea className="textarea is-primary" ref = "bio"></textarea>
  						</p>
 				  </div>
          </div>

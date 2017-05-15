@@ -28,6 +28,13 @@ export const appReducer = (state=initialSignUpState, action) => {
 		return {...state, error: action.error};
 	}
 
+	if (action.type === userActions.FETCH_EDIT_SEARCH_SUCCESS) {
+		return {...state, userData: action.userData, error: null};
+	}
+	if (action.type === userActions.FETCH_EDIT_SEARCH_ERROR){
+		return {...state, error: action.error};
+	}
+
 	if (action.type === userActions.FETCH_EDIT_SUCCESS) {
 		return {...state, userData: action.userData, error: null};
 	}

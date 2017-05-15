@@ -7,10 +7,10 @@
 //import SignIn from './contents/page1_SignIn';
 //
 //describe('SignIn component', function() {
-//  	it('Renders the log in form', function() {
+//  	it('logs in a user', function() {
 //		
 //		const renderer = TestUtils.createRenderer();
-//		renderer.render(<SignIn/>);
+//		renderer.render(<Search user={user}/>);
 //		const result = renderer.getRenderOutput();	
 //});
 //  });

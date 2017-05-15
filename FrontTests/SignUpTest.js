@@ -7,10 +7,10 @@
 //  import SignUp from './components/page1_SignUp.js';
 //
 //  describe('SignUp component', function() {
-//  	it('Renders the sign up form', function() {
+//  	it('signs up a new user', function() {
 //		
 //		const renderer = TestUtils.createRenderer();
-//		renderer.render(<SignUp/>);
+//		renderer.render(<Search user={user}/>;
 //		const result = renderer.getRenderOutput();	
 //});
 //  });

@@ -10,10 +10,10 @@ class SignIn extends React.Component {
 		this.fetchLogInSuccess = this.fetchLogInSuccess.bind(this);
     }
 
-    //componentDidUpdate(){
-    //	console.log("::UPDATED::", this.props.appData.userData);
-    //	if(this.props.appData.userData) hashHistory.push('/Search');
-    //}
+    componentWillReceiveProps(nextProps){
+    	console.log("::UPDATED::", this.props.appData.userData);
+    	if(nextProps.appData.userData !== null) hashHistory.push('/Search');
+    }
 
     fetchLogInSuccess(e) {
     	e.preventDefault();
@@ -27,19 +27,22 @@ render(){
 		<div>
 			<Title/>
 			<section id="SignInSection">
-				<div className="SignInTitle">Log In</div>
-				<div className="columns">
-          			<div className="column is-one-quarter">
-						<div className="field">
+				<div className="columns is-gapless is-multiline is-mobile">
+              		<div className="column is-one-quarter">
+						<div className="SignInTitle">Log In</div>
+							<div className="field">
   							<label htmlFor="label">Username</label>
   							<p className="control">
     						<input className="input" type="text" ref="username"/>
   							</p>
-						</div>
+							</div>
+						
 					</div>
+						<div className="column is-three-quarters">
+							<div className="fun_music"><img src="/assets/music.png"/></div>
+						</div>
 				</div>
-
-           		<div className="columns">
+           		<div className="columns is-gapless is-multiline is-mobile">
           			<div className="column is-one-quarter">
 						<div className="field">
   							<label htmlFor="label">Password</label>
@@ -47,6 +50,9 @@ render(){
     						<input className="input" type="text" ref="password"/>
   							</p>
 						</div>
+					</div>
+					<div className="column is-three-quarters">
+						<div className="fun_mic"><img src="/assets/mic.png"/></div>
 					</div>
 				</div>
 				<a onClick={this.fetchLogInSuccess}>Log In</a>
