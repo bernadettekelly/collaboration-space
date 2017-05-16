@@ -10,7 +10,8 @@
 //  	it('logs in a user', function() {
 //		
 //		const renderer = TestUtils.createRenderer();
-//		renderer.render(<Search user={user}/>);
-//		const result = renderer.getRenderOutput();	
+//		renderer.render(<SignIn user={user}/>);
+//		const result = TestUtils.renderIntoDocument(
+//		<SignIn user={user} fetchLoginSucess);
 //});
 //  });

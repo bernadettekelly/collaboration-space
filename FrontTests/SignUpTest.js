@@ -10,7 +10,7 @@
 //  	it('signs up a new user', function() {
 //		
 //		const renderer = TestUtils.createRenderer();
-//		renderer.render(<Search user={user}/>;
+//		renderer.render(<SignUp user={user}/>;
 //		const result = renderer.getRenderOutput();	
 //});
 //  });
