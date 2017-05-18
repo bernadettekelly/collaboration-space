@@ -26,12 +26,13 @@ class Search extends React.Component {
     if(this.props.appData.userData==null) hashHistory.push('/');
   }
 
+
 render(){
 	const {appData} = this.props;
 	console.log(appData.candidates);
 	return (
 		<div>
-			<Title/>
+			<Title size="is-medium"/>
 			<section id="SearchSection">
 			<nav className="nav">
 				<div className="nav-right nav-menu is-active">
@@ -39,6 +40,7 @@ render(){
   					<a className="nav-item is-tab" onClick={this.fetchLogOut}>Log Out</a>
   				</div>
   			</nav>
+			
   					<form id="SearchForm" form action="#" method="post">
   					
 							<section className="Category_Dropdown">
@@ -84,8 +86,10 @@ render(){
 					{
 						appData.candidates.map((item, index) => {
 							return (
-								<div className="box" key="">
-									<div className="media-left"> <strong> {item.firstName} {item.lastName} </strong> {item.category} <br/> {item.Location} <br/> {item.Email} <br/> {item.Phone} <br/> {item.Bio}</div>
+								<div className="box"key=""> 
+							{/*onClick={p className=""*/}
+									<div className="media-left"> <strong> {item.firstName} {item.lastName} </strong> {item.category} <br/> {item.Location} <br/> {item.Email} <br/> <p className="hidden">{item.Phone}</p> <br/> {item.Bio}</div>
+								}
 								</div>
 							);
 						})

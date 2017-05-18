@@ -26,6 +26,7 @@ class Edit extends React.Component {
 
   componentWillReceiveProps(nextProps){
     const {appData} = nextProps; 
+    if(appData.userData!==null) {
     this.setState({
       firstName: appData.userData.firstName, 
       lastName: appData.userData.lastName,
@@ -36,6 +37,7 @@ class Edit extends React.Component {
       Bio: appData.userData.Bio
     });
   }
+}
 
    componentDidUpdate(){
       if(this.props.appData.userData) hashHistory.push('/Search');

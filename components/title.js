@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect, hashHistory} from 'react-router';
 
-export default function Title() {
+export default function Title(props) {
+	var hero = "hero "+props.size;
 	return (
 		<div>
-			<section className="hero is-medium">
+			<section className={hero}>
 				<div className="hero-body">
 					<div className="container">
 						<section id = "header_container">

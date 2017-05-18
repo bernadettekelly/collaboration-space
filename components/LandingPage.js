@@ -11,10 +11,10 @@ class LandingPage extends React.Component {
         //this.fetchLogInSuccess = this.fetchLogInSuccess.bind(this);
 	}
 
-	 componentWillReceiveProps(nextProps){
-    	console.log("::UPDATED::", this.props.appData.userData);
-    	//if(nextProps.appData.userData !== null) hashHistory.push('/Search');
-    }
+	// componentWillReceiveProps(nextProps){
+    //	console.log("::UPDATED::", this.props.appData.userData);
+    //	if(nextProps.appData.userData !== null) hashHistory.push('/Search');
+    //}
 
 	fetchSearch(e) {
 		e.preventDefault();
@@ -22,14 +22,30 @@ class LandingPage extends React.Component {
 		this.props.dispatch(userActions.fetchSearch(this.refs.type.value, this.refs.location.value));
 	}
 
+	//btn.onClick = function() {
+	//var btn = document.getElementById("myBtn");
+	//var modal = document.getElementById('myModal');
+	//	modal.style.display = "block";
+	//}
+	//window.onClick = function(event) {
+	//var btn = document.getElementById("myBtn");
+	//var modal = document.getElementById('myModal');
+	//	if (event.target == modal) {
+	//		modal.style.display = "none";
+	//	}
+	//}
+
 render(){
 	const {appData} = this.props;
 	console.log(appData.candidates);
 	return (
 		<div>
-			<Title/>
+			<Title size="is-fullheight"/>
 			<section id="SearchSection">
 			<nav className="nav">
+				<div className="nav-left nav-menu is-active">
+					<button id="myBtn">Open Me</button>
+				</div>
 				<div className="nav-right nav-menu is-active">
   					<Link className="nav-item is-tab" to="SignIn">Log In</Link>
   				</div>
@@ -72,10 +88,20 @@ render(){
                     	</div>
                     	<div className="column">
 						<a onClick={this.fetchSearch}>Search</a>
-						//{this.fetchLogInSuccess}
 						</div>
 					</div>
-					</form>
+							
+			</form>
+			<div id="myModal" className="modal">
+  				<div className="modal-content">
+    			<span className="close">&times;</span>
+    			<p>Welcome! To log in, you may use our created login - 
+    			username: audrey1, password: cat. Feell free to edit 
+    			Audrey's profile if you like and search for other musicians
+    			on our search page. Thanks for visiting!</p>
+  				</div>
+
+			</div>
   				<section id = "results_container">
 					<div className="columns">
         				<div className="column is-one-third">
@@ -101,6 +127,7 @@ render(){
 				</section>
          		
 			</section>
+
 		</div>
 	);
   }
