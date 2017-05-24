@@ -4,15 +4,14 @@ import chai from 'chai';
 
 const should = chai.should();
 
-  import SignUp from './components/page1_SignUp.js';
+import Search from './components/page2_Search.js';
 
-
-describe('SignUp component', function() {
-	it('Renders the SignUp component', function() {
-		const container = "dataExample";
-
+describe('Search component', function(){
+	it('Renders the results', function() {
+  	const user ='userDataExample';
+		
 		const renderer = TestUtils.createRenderer();
-		renderer.render(<SignUp/>);
+		renderer.render(<Search user={user}/>);
 		const result = renderer.getRenderOutput();
-	});
-})
+  });
+});

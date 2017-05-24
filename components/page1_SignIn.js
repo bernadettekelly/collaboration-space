@@ -25,7 +25,7 @@ render(){
 	const {appData} = this.props; 
 	return (
 		<div>
-			<Title/>
+			<Title size="is-medium"/>
 			<section id="SignInSection">
 				<div className="columns is-gapless is-multiline is-mobile">
               		<div className="column is-one-quarter">

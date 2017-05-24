@@ -29,8 +29,8 @@ h2 {
 
 #SignInSection {
 	margin-left: 20px;
-	margin-top: 450px;
-	padding-top: 20px;
+	margin-top: 40px;
+	padding-top: 20px; 
 }
 
 #SignInForm {
@@ -42,6 +42,7 @@ h2 {
 	font-family: 'Covered By Your Grace', cursive;
 	font-size: 26px;
 	font-weight: bold;
+	color: #8827E8
 }
 
 .EditTitle {
@@ -49,11 +50,17 @@ h2 {
 	font-family: 'Covered By Your Grace', cursive;
 	font-size: 30px;
 	font-weight: bold;
+	color: #8827E8
 }
 
 #SearchSection {
-	position: fixed;
 	width: 100%;
+	z-index: 3;
+}
+
+#SearchForm {
+	margin-top: 20px;
+	text-align: center;
 }
 
 .SignUpTitle {
@@ -61,6 +68,7 @@ h2 {
 	font-size: 30px;
 	margin-bottom: 20px;
 	font-weight: bold;
+	color: #8827E8
 }
 
 .Category_Dropdown {
@@ -87,13 +95,14 @@ body {
 }
 
 .hero {
-	position: fixed;
 	top:0;
 	bottom: 290px;
 	width: 100%;
 	background-image: url("http://thenerdstash.com/wp-content/uploads/2015/10/firstrockband021280jpg-a6e89a_1280w.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	z-index: 1;
+
 }
 
 label {
@@ -142,13 +151,14 @@ a {
 	float: right;
 	position: absolute;
 	right: 2%;
-	top: 62%;
+	top: 65%;
+	z-index: 0;
 }
 
 .fun_mic {
 	float: right;
 	position: absolute;
-	top: 85%;
+	top: 82%;
 	right: 50%
 }
 
@@ -166,14 +176,16 @@ a {
 	right: 5%;
 }
 
-#SearchForm {
-	margin-top: 400px;
-	margin-left: 450px;
+#LandingForm {
+	margin-top: 20px;
+	margin-left: 200px;
 }
 
-#LandingForm {
-	margin-top: 430px;
-	margin-left: 300px;
+.nav {
+	z-index: 3;
+	position: fixed;
+	width: 100%;
+	top: 0;
 }
 
 a.nav-item {
@@ -195,13 +207,12 @@ a.nav-item {
 }
 
 
-
 .column.is-one-third {
 	margin-left: 10px;
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -241,9 +252,9 @@ a.nav-item {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 18px;
 	float: left;
-	border-radius: 3px;
+	border-radius: 7px;
 	background-color: white;
-	width: 75px;
+	width: 80px;
 	height: 40px;
 	margin-top: 4px;
 	margin-left: 5px;
@@ -253,4 +264,9 @@ a.nav-item {
 
 .hidden {
 	display: none;
+}
+
+.x {
+	font-size: 35px;
+	color: #00d1b2;
 }

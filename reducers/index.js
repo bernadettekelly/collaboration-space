@@ -1,7 +1,7 @@
 import * as userActions from '../actions/index';
 
 const initialSignUpState = {
-	userData: {},
+	userData: null,
 	candidates: [],
 	error: null
 };
@@ -15,14 +15,14 @@ export const appReducer = (state=initialSignUpState, action) => {
 	}
 
 	if (action.type === userActions.FETCH_LOGIN_SUCCESS) {
-	return {...state, userData: action.userData, error: null};
+	return {...state, userData: action.userData, candidates: [], error: null};
 	}
 	if (action.type === userActions.FETCH_LOGIN_ERROR){
 		return {...state, error: action.error};
 	}
 
 	if (action.type === userActions.FETCH_LOGOUT_SUCCESS) {
-		return {...state, userData: null, error: null};
+		return {...state, userData: null, candidates: [], error: null};
 	}
 	if (action.type === userActions.FETCH_LOGOUT_ERROR){
 		return {...state, error: action.error};

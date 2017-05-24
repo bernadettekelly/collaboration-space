@@ -4,15 +4,13 @@ import chai from 'chai';
 
 const should = chai.should();
 
-  import SignUp from './components/page1_SignUp.js';
+import LandingPage from './contents/LandingPage';
 
-
-describe('SignUp component', function() {
-	it('Renders the SignUp component', function() {
-		const container = "dataExample";
+describe('LandingPage component', function() {
+	it('Renders the LandingPage component', function() {
 
 		const renderer = TestUtils.createRenderer();
-		renderer.render(<SignUp/>);
+		renderer.render(<LandingPage/>);
 		const result = renderer.getRenderOutput();
 	});
 })

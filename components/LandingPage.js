@@ -2,19 +2,24 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link, hashHistory} from 'react-router';
 import Title from './title';
+import Navbar from './navbar';
 import * as userActions from '../actions/index';
 
 class LandingPage extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			modalStyle: {
+				display: 'block'
+			}
+		};
         this.fetchSearch = this.fetchSearch.bind(this);
-        //this.fetchLogInSuccess = this.fetchLogInSuccess.bind(this);
+        this.fetchLogOut = this.fetchLogOut.bind(this);
 	}
 
-	// componentWillReceiveProps(nextProps){
-    //	console.log("::UPDATED::", this.props.appData.userData);
-    //	if(nextProps.appData.userData !== null) hashHistory.push('/Search');
-    //}
+	fetchLogOut(e){
+		this.props.dispatch(userActions.fetchLogOut())
+	}
 
 	fetchSearch(e) {
 		e.preventDefault();
@@ -22,18 +27,15 @@ class LandingPage extends React.Component {
 		this.props.dispatch(userActions.fetchSearch(this.refs.type.value, this.refs.location.value));
 	}
 
-	//btn.onClick = function() {
-	//var btn = document.getElementById("myBtn");
-	//var modal = document.getElementById('myModal');
-	//	modal.style.display = "block";
-	//}
-	//window.onClick = function(event) {
-	//var btn = document.getElementById("myBtn");
-	//var modal = document.getElementById('myModal');
-	//	if (event.target == modal) {
-	//		modal.style.display = "none";
-	//	}
-	//}
+	openModal() {
+		let modal = this.refs['modal'];
+     	modal.style.display = "block";
+	};
+
+	closeModal() {
+		this.setState({modalStyle: {display: 'none'}});
+	};
+
 
 render(){
 	const {appData} = this.props;
@@ -42,14 +44,7 @@ render(){
 		<div>
 			<Title size="is-fullheight"/>
 			<section id="SearchSection">
-			<nav className="nav">
-				<div className="nav-left nav-menu is-active">
-					<button id="myBtn">Open Me</button>
-				</div>
-				<div className="nav-right nav-menu is-active">
-  					<Link className="nav-item is-tab" to="SignIn">Log In</Link>
-  				</div>
-  			</nav>
+					<Navbar isLoggedIn={appData.userData !== null} onLogOut={this.fetchLogOut} />
   					<form id="LandingForm" form action="#" method="post">
   					<div className="columns is-multiline is-mobile">
               			<div className="column is-one-third">
@@ -92,9 +87,9 @@ render(){
 					</div>
 							
 			</form>
-			<div id="myModal" className="modal">
+			<div id="myModal" className="modal" style={this.state.modalStyle}>
   				<div className="modal-content">
-    			<span className="close">&times;</span>
+    			<span className="close" onClick={this.closeModal.bind(this)}>&times;</span>
     			<p>Welcome! To log in, you may use our created login - 
     			username: audrey1, password: cat. Feell free to edit 
     			Audrey's profile if you like and search for other musicians

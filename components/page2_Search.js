@@ -2,11 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link, hashHistory} from 'react-router';
 import Title from './title';
+import Navbar from './navbar';
 import * as userActions from '../actions/index';
+import Box from './box';
 
 class Search extends React.Component {
 	constructor(props) {
 		super(props);
+		/*this.state = {
+			boxStyle: {
+				height: 70px
+			}
+		};*/
         this.fetchSearch = this.fetchSearch.bind(this);
         this.fetchLogOut = this.fetchLogOut.bind(this);
 	}
@@ -21,6 +28,15 @@ class Search extends React.Component {
 		this.props.dispatch(userActions.fetchLogOut())
 	}
 
+	/*smallBox() {
+		letBox = this.refs['box'];
+		box.style.height = 70px;
+	};*/
+
+	/*expandBox() {
+		this.setState({boxStyle:{height: 270px}{p clasName="";}});
+	};*/
+
 	componentDidUpdate() {
 		console.log('update', this.props.appData.userData);
     if(this.props.appData.userData==null) hashHistory.push('/');
@@ -34,12 +50,7 @@ render(){
 		<div>
 			<Title size="is-medium"/>
 			<section id="SearchSection">
-			<nav className="nav">
-				<div className="nav-right nav-menu is-active">
-  					<Link className="nav-item is-tab" to="Edit">Edit Profile</Link>
-  					<a className="nav-item is-tab" onClick={this.fetchLogOut}>Log Out</a>
-  				</div>
-  			</nav>
+			<Navbar isLoggedIn={appData.userData !== null} onLogOut={this.fetchLogOut} />
 			
   					<form id="SearchForm" form action="#" method="post">
   					
@@ -86,12 +97,8 @@ render(){
 					{
 						appData.candidates.map((item, index) => {
 							return (
-								<div className="box"key=""> 
-							{/*onClick={p className=""*/}
-									<div className="media-left"> <strong> {item.firstName} {item.lastName} </strong> {item.category} <br/> {item.Location} <br/> {item.Email} <br/> <p className="hidden">{item.Phone}</p> <br/> {item.Bio}</div>
-								}
-								</div>
-							);
+								<Box item={item} />
+							)
 						})
 					}
 					
