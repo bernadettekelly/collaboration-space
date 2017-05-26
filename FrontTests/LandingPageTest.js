@@ -7,7 +7,7 @@
 //import LandingPage from '../components/LandingPage';
 //
 //describe('LandingPage component', function() {
-//	it('Renders the LandingPage component', function() {
+//	it('should render the LandingPage component', function() {
 //
 //		const renderer = TestUtils.createRenderer();
 //		renderer.render(<LandingPage/>);
