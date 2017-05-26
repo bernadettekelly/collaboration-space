@@ -4,14 +4,12 @@ import chai from 'chai';
 
 const should = chai.should();
 
-import Title from '../components/title';
+import Navbar from '../components/Navbar';
 
-describe('Title component', function() {
-	it('Should render the title', function() {
-		const header_container = "titleExample";
-
+describe('Navbar component', function() {
+	it('Should render the nav component', function() {
 		const renderer = TestUtils.createRenderer();
-		renderer.render(<Title/>);
+		renderer.render(<Navbar/>);
 		const result = renderer.getRenderOutput();
 	});
 })
