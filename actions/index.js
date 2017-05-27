@@ -4,24 +4,21 @@ var URL_LOGOUT = "http://localhost:8080/users/logout"
 var URL_ID = "http://localhost:8080/users/id/"
 var URL_USERS_EDITS = "http://localhost:8080/users/"
 
-//import qwest from 'qwest';
+import axios from 'axios';
 
 
 export const fetchSignUp = (firstName, lastName, username, password, email, category, location, phone, bio) => dispatch => {
 	console.log('execute signup');
-	fetch(URL_USERS, {
-	 	method: 'post',
-	 	body: JSON.stringify({
-			firstName: firstName, 
-			lastName: lastName, 
-			username: username, 
-			password: password,
-			Email: email, 
-			Category: category, 
-			Location: location, 
-			Phone: phone, 
-			Bio: bio
-		})
+	axios.post(URL_USERS, {
+		firstName: firstName, 
+		lastName: lastName, 
+		username: username, 
+		password: password,
+		Email: email, 
+		Category: category, 
+		Location: location, 
+		Phone: phone, 
+		Bio: bio
 	})
 	.then((xhr, data) => {
 		console.log(data);
