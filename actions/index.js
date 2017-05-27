@@ -32,10 +32,10 @@ export const fetchSignUp = (firstName, lastName, username, password, email, cate
 
 export const fetchLogIn = (username, password) => dispatch => {
 	console.log('execute login');
-	qwest.post(URL_LOGIN, {
+	axios.post(URL_LOGIN, {
 		username: username, 
 		password: password
-	}, {dataType: 'json'})
+	})
 	.then((xhr, data) => {
 		console.log('successful login');
 		console.log(data);
@@ -49,8 +49,8 @@ export const fetchLogIn = (username, password) => dispatch => {
 
 export const fetchLogOut = () => dispatch => {
 	console.log('execute logout');
-	qwest.delete(URL_LOGOUT, {
-		},	{dataType: 'json'})
+	axios.delete(URL_LOGOUT, {})
+		
 
     .then((xhr, data) => {
 		console.log(data);
@@ -65,7 +65,7 @@ export const fetchLogOut = () => dispatch => {
 
 export const fetchUserData = () => dispatch => {
 	console.log('show saved data');
-	qwest.get(URL_ID, {}, {dataType: 'json'})
+	axios.get(URL_ID, {})
 	.then((xhr, data) => {
 		console.log(data);
 		dispatch(fetchEditSearchSuccess(data));
@@ -78,7 +78,7 @@ export const fetchUserData = () => dispatch => {
 
 export const fetchEdit = (firstName, lastName, category, location, email, phone, bio) => dispatch => {
 	console.log('execute edit');
-	qwest.put(URL_USERS_EDITS, {
+	axios.put(URL_USERS_EDITS, {
 			firstName: firstName, 
 			lastName: lastName,  
 			Category: category, 
@@ -86,7 +86,7 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
 			Email: email, 
 			Phone: phone, 
 			Bio: bio
-		}, {dataType: 'json'})
+		})
 	.then((xhr, data) => {
 		console.log(data);
 		dispatch(fetchEditSuccess(data));
@@ -100,9 +100,11 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
 
   export const fetchSearch = (category, location) => dispatch => {
   	console.log('execute search');
-  	 qwest.get(URL_USERS, {
+  	 axios.get(URL_USERS, {
+  	 		params: {
   			category: category, 
 			location: location 
+		}
 	   })
 	.then((xhr, data) => {
   		console.log(data);
