@@ -4,12 +4,14 @@ var URL_LOGOUT = "http://localhost:8080/users/logout"
 var URL_ID = "http://localhost:8080/users/id/"
 var URL_USERS_EDITS = "http://localhost:8080/users/"
 
-import qwest from 'qwest';
+//import qwest from 'qwest';
 
 
 export const fetchSignUp = (firstName, lastName, username, password, email, category, location, phone, bio) => dispatch => {
 	console.log('execute signup');
-	 qwest.post(URL_USERS, {
+	fetch(URL_USERS, {
+	 	method: 'post',
+	 	body: JSON.stringify({
 			firstName: firstName, 
 			lastName: lastName, 
 			username: username, 
@@ -19,8 +21,8 @@ export const fetchSignUp = (firstName, lastName, username, password, email, cate
 			Location: location, 
 			Phone: phone, 
 			Bio: bio
-		},	{dataType: 'json'})
-		//}, null)
+		})
+	})
 	.then((xhr, data) => {
 		console.log(data);
 		dispatch(fetchSignUpSuccess(data));

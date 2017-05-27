@@ -1,8 +1,6 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import chai from 'chai';
-
-const should = chai.should();
+import {should} from 'chai';
 
 import Navbar from '../components/Navbar';
 
