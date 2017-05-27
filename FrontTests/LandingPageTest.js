@@ -3,20 +3,15 @@ import {should} from 'chai';
 import React from 'react';
 import LandingPage from '../components/LandingPage';
 
-describe('Environment', () => {
-  it('Works, hopefully', () => {
-    true.should.be.true;
-  });
-});
+//describe('Environment', () => {
+//  it('Works, hopefully', () => {
+//    true.should.be.true;
+//  });
+//});
 
-//import React from 'react';
+
 //import TestUtils from 'react-addons-test-utils';
-//import chai from 'chai';
-//
-//const should = chai.should();
-//
-//import LandingPage from '../components/LandingPage';
-//
+
 //describe('LandingPage component', function() {
 //	it('should render the LandingPage component', function() {
 //
