@@ -4,11 +4,12 @@ import chai from 'chai';
 
 const should = chai.should();
 
+let window = {}
+
 import SignIn from '../components/page1_SignIn';
 
 describe('SignIn component', function() {
 	it('should render the SignIn component', function() {
-
 		const renderer = TestUtils.createRenderer();
 		renderer.render(<SignIn/>);
 		const result = renderer.getRenderOutput();
