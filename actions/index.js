@@ -7,6 +7,29 @@ var URL_USERS_EDITS = "http://localhost:8080/users/"
 import axios from 'axios';
 
 
+//export const fetchSignUp = (firstName, lastName, username, password, email, category, location, phone, bio) => dispatch => {
+//	console.log('execute signup');
+//	axios.post(URL_USERS, {
+//		firstName: firstName, 
+//		lastName: lastName, 
+//		username: username, 
+//		password: password,
+//		Email: email, 
+//		Category: category, 
+//		Location: location, 
+//		Phone: phone, 
+//		Bio: bio
+//	})
+//	.then((xhr, data) => {
+//		console.log(data);
+//		dispatch(fetchSignUpSuccess(data));
+//	})
+//	.catch((err) => {
+//		console.error(err);
+//		dispatch(fetchSignUpError());
+//	})
+//}
+
 export const fetchSignUp = (firstName, lastName, username, password, email, category, location, phone, bio) => dispatch => {
 	console.log('execute signup');
 	axios.post(URL_USERS, {
@@ -20,15 +43,32 @@ export const fetchSignUp = (firstName, lastName, username, password, email, cate
 		Phone: phone, 
 		Bio: bio
 	})
-	.then((xhr, data) => {
+	.then(function (data) {
 		console.log(data);
 		dispatch(fetchSignUpSuccess(data));
 	})
-	.catch((err) => {
+	.catch(function (error) {
 		console.error(err);
 		dispatch(fetchSignUpError());
 	})
 }
+
+//export const fetchLogIn = (username, password) => dispatch => {
+//	console.log('execute login');
+//	axios.post(URL_LOGIN, {
+//		username: username, 
+//		password: password
+//	})
+//	.then((xhr, data) => {
+//		console.log('successful login');
+//		console.log(data);
+//		dispatch(fetchLogInSuccess(data));
+//	})
+//	.catch((err) => {
+//		console.error(err);
+//		dispatch(fetchLogInError());
+//	})
+//}
 
 export const fetchLogIn = (username, password) => dispatch => {
 	console.log('execute login');
@@ -36,45 +76,95 @@ export const fetchLogIn = (username, password) => dispatch => {
 		username: username, 
 		password: password
 	})
-	.then((xhr, data) => {
+	.then(function (data) {
 		console.log('successful login');
 		console.log(data);
 		dispatch(fetchLogInSuccess(data));
 	})
-	.catch((err) => {
+	.catch(function (error) {
 		console.error(err);
 		dispatch(fetchLogInError());
 	})
 }
+
+//export const fetchLogOut = () => dispatch => {
+//	console.log('execute logout');
+//	axios.delete(URL_LOGOUT, {})
+//		
+//
+//    .then((xhr, data) => {
+//		console.log(data);
+//		dispatch(fetchLogOutSuccess(data));
+//	})
+//	.catch((err) => {
+//		console.error(err);
+//		dispatch(fetchLogOutError());
+//
+//	})
+//}
 
 export const fetchLogOut = () => dispatch => {
 	console.log('execute logout');
 	axios.delete(URL_LOGOUT, {})
 		
 
-    .then((xhr, data) => {
+    .then(function (data) {
 		console.log(data);
 		dispatch(fetchLogOutSuccess(data));
 	})
-	.catch((err) => {
+	.catch(function (error) {
 		console.error(err);
 		dispatch(fetchLogOutError());
 
 	})
 }
 
+//export const fetchUserData = () => dispatch => {
+//	console.log('show saved data');
+//	axios.get(URL_ID, {})
+//	.then((xhr, data) => {
+//		console.log(data);
+//		dispatch(fetchEditSearchSuccess(data));
+//	})
+//	.catch((err) => {
+//  		console.error(err);
+//		dispatch(fetchEditSearchError(err));
+//  	})
+//}
+
 export const fetchUserData = () => dispatch => {
 	console.log('show saved data');
 	axios.get(URL_ID, {})
-	.then((xhr, data) => {
+	.then(function (data) {
 		console.log(data);
 		dispatch(fetchEditSearchSuccess(data));
 	})
-	.catch((err) => {
+	.catch(function (error) {
   		console.error(err);
 		dispatch(fetchEditSearchError(err));
   	})
 }
+
+//export const fetchEdit = (firstName, lastName, category, location, email, phone, bio) => dispatch => {
+//	console.log('execute edit');
+//	axios.put(URL_USERS_EDITS, {
+//			firstName: firstName, 
+//			lastName: lastName,  
+//			Category: category, 
+//			Location: location,
+//			Email: email, 
+//			Phone: phone, 
+//			Bio: bio
+//		})
+//	.then((xhr, data) => {
+//		console.log(data);
+//		dispatch(fetchEditSuccess(data));
+//	})
+//	.catch((err) => {
+//		console.error(err);
+//		dispatch(fetchEditError());
+//	})
+//}
 
 export const fetchEdit = (firstName, lastName, category, location, email, phone, bio) => dispatch => {
 	console.log('execute edit');
@@ -87,16 +177,34 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
 			Phone: phone, 
 			Bio: bio
 		})
-	.then((xhr, data) => {
+	.then(function (data) {
 		console.log(data);
 		dispatch(fetchEditSuccess(data));
 	})
-	.catch((err) => {
+	.catch(function (error) {
 		console.error(err);
 		dispatch(fetchEditError());
 	})
-	//NEED TO SHOW VALUE OF PREVIOUSLY SAVED PROFILE INFO
 }
+
+//  export const fetchSearch = (category, location) => dispatch => {
+//  	console.log('execute search');
+//  	 axios.get(URL_USERS, {
+//  	 		params: {
+//  			category: category, 
+//			location: location 
+//		}
+//	   })
+//	.then((xhr, data) => {
+//  		console.log(data);
+//		dispatch(fetchSearchSuccess(data));
+//  	})
+//  	.catch((err) => {
+//  		console.error(err);
+//		dispatch(fetchSearchError(err));
+//  	})
+//  	
+//  }
 
   export const fetchSearch = (category, location) => dispatch => {
   	console.log('execute search');
@@ -106,11 +214,11 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
 			location: location 
 		}
 	   })
-	.then((xhr, data) => {
+	.then(function (data) {
   		console.log(data);
 		dispatch(fetchSearchSuccess(data));
   	})
-  	.catch((err) => {
+  	.catch(function (err) {
   		console.error(err);
 		dispatch(fetchSearchError(err));
   	})
