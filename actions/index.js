@@ -20,7 +20,6 @@ export const fetchSignUp = (firstName, lastName, username, password, email, cate
 			Phone: phone, 
 			Bio: bio
 		},	{dataType: 'json'})
-		//}, null)
 	.then((xhr, data) => {
 		console.log(data);
 		dispatch(fetchSignUpSuccess(data));
