@@ -1,13 +1,7 @@
-import $ from 'teaspoon';
-import {should} from 'chai';
-import React from 'react';
-import LandingPage from '../components/LandingPage';
-
-describe('Environment', () => {
-  it('Works, hopefully', () => {
-    true.should.be.true;
-  });
-});
+//import $ from 'teaspoon';
+//import {should} from 'chai';
+//import React from 'react';
+//import LandingPage from '../components/LandingPage';
 
 //import React from 'react';
 //import TestUtils from 'react-addons-test-utils';
