@@ -5,7 +5,7 @@ import Title from './title';
 import Navbar from './navbar';
 import * as userActions from '../actions/index';
 
-class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -39,7 +39,6 @@ class LandingPage extends React.Component {
 
 render(){
 	const {appData} = this.props;
-	console.log(appData.candidates);
 	return (
 		<div>
 			<Title size="is-fullheight"/>
@@ -91,7 +90,7 @@ render(){
   				<div className="modal-content">
     			<span className="close" onClick={this.closeModal.bind(this)}>&times;</span>
     			<p>Welcome! To log in, you may use our created login - 
-    			username: audrey1, password: cat. Feell free to edit 
+    			username: audrey1, password: cat. Feel free to edit 
     			Audrey's profile if you like and search for other musicians
     			on our search page. Thanks for visiting!</p>
   				</div>
@@ -102,6 +101,7 @@ render(){
         				<div className="column is-one-third">
 					{
 						appData.candidates.map((item, index) => {
+							console.log(response);
 							return (
 								<div className="box" key="">
 									<div className="media-left"> <strong> {item.firstName} {item.lastName} </strong> {item.category} <br/> {item.Location} <br/> {item.Email} <br/> {item.Phone} <br/> {item.Bio}</div>
