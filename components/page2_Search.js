@@ -6,7 +6,7 @@ import Navbar from './navbar';
 import * as userActions from '../actions/index';
 import Box from './box';
 
-class Search extends React.Component {
+export class Search extends React.Component {
 	constructor(props) {
 		super(props);
 		/*this.state = {

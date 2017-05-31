@@ -5,7 +5,7 @@ import Title from './title';
 import Navbar from './navbar';
 import * as userActions from '../actions/index';
 
-class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -39,7 +39,6 @@ class LandingPage extends React.Component {
 
 render(){
 	const {appData} = this.props;
-	console.log(appData.candidates);
 	return (
 		<div>
 			<Title size="is-fullheight"/>

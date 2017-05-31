@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link, hashHistory} from 'react-router';
 import * as userActions from '../actions/index';
 
-class Edit extends React.Component {
+export class Edit extends React.Component {
 	constructor(props) {
     super(props);
     //this.fetchEditSearchSuccess = this.fetchEditSearchSuccess.bind(this);
@@ -65,7 +65,7 @@ class Edit extends React.Component {
   }
 
 changeValue(propName, e){
-  newState = {};
+  let newState = {};
   newState[propName] = e.currentTarget.value
   this.setState(newState);
 }

@@ -135,13 +135,13 @@ export const fetchLogOut = () => dispatch => {
 export const fetchUserData = () => dispatch => {
 	console.log('show saved data');
 	axios.get(URL_ID, {})
-	.then(function (data) {
-		console.log(data);
-		dispatch(fetchEditSearchSuccess(data));
+	.then(function (response) {
+		console.log(response.data);
+		dispatch(fetchEditSearchSuccess(response.data));
 	})
 	.catch(function (error) {
-  		console.error(err);
-		dispatch(fetchEditSearchError(err));
+  		console.error(error);
+		dispatch(fetchEditSearchError(error));
   	})
 }
 
@@ -214,9 +214,9 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
 			location: location 
 		}
 	   })
-	.then(function (data) {
-  		console.log(data);
-		dispatch(fetchSearchSuccess(data));
+	.then(function (response) {
+  		console.log("SEARCH:: ",response);
+		dispatch(fetchSearchSuccess(response.data));
   	})
   	.catch(function (err) {
   		console.error(err);

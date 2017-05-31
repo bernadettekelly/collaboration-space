@@ -4,7 +4,7 @@ import {Link, hashHistory} from 'react-router';
 import * as userActions from '../actions/index';
 
 
-class SignUp extends React.Component {
+export class SignUp extends React.Component {
 	constructor(props) {
     super(props);
     this.fetchSignUpSuccess = this.fetchSignUpSuccess.bind(this);
