@@ -1,8 +1,8 @@
-var URL_USERS = "http://localhost:8080/users"
-var URL_LOGIN = "http://localhost:8080/users/login"
-var URL_LOGOUT = "http://localhost:8080/users/logout"
-var URL_ID = "http://localhost:8080/users/id/"
-var URL_USERS_EDITS = "http://localhost:8080/users/"
+var URL_USERS = "https://shrouded-ocean-80561.herokuapp.com/users"
+var URL_LOGIN = "https://shrouded-ocean-80561.herokuapp.com/login"
+var URL_LOGOUT = "https://shrouded-ocean-80561.herokuapp.com/logout"
+var URL_ID = "https://shrouded-ocean-80561.herokuapp.com/users/id/"
+var URL_USERS_EDITS = "https://shrouded-ocean-80561.herokuapp.com/users/"
 
 import axios from 'axios';
 
