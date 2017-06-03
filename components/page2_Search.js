@@ -9,33 +9,18 @@ import Box from './box';
 export class Search extends React.Component {
 	constructor(props) {
 		super(props);
-		/*this.state = {
-			boxStyle: {
-				height: 70px
-			}
-		};*/
         this.fetchSearch = this.fetchSearch.bind(this);
         this.fetchLogOut = this.fetchLogOut.bind(this);
 	}
 
 	fetchSearch(e) {
 		e.preventDefault();
-		//if(...) hashHistory
 		this.props.dispatch(userActions.fetchSearch(this.refs.type.value, this.refs.location.value));
 	}
 
 	fetchLogOut(e){
 		this.props.dispatch(userActions.fetchLogOut())
 	}
-
-	/*smallBox() {
-		letBox = this.refs['box'];
-		box.style.height = 70px;
-	};*/
-
-	/*expandBox() {
-		this.setState({boxStyle:{height: 270px}{p clasName="";}});
-	};*/
 
 	componentDidUpdate() {
 		console.log('update', this.props.appData.userData);

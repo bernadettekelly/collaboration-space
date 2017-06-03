@@ -1,17 +1,21 @@
-//import React from 'react';
-//import TestUtils from 'react-addons-test-utils';
-//import chai from 'chai';
-//
-//const should = chai.should();
-//
-//import Search from '../components/page2_Search.js';
-//
-//describe('Search component', function(){
-//	it('Renders the results', function() {
-//  	const user ='userDataExample';
-//		
-//		const renderer = TestUtils.createRenderer();
-//		renderer.render(<Search user={user}/>);
-//		const result = renderer.getRenderOutput();
-//  });
-//});
+import chai from 'chai';
+
+const should = chai.should();
+
+import * as userActions from '../actions/index.js';
+import {appReducer} from '../reducers/index.js';
+
+describe('userActions', function(){
+	it('should search for user data', function() {
+		userActions.fetchSearch('Instrumentalist', 'Queens');
+	  });
+	it('should update the reducer when the search is succesful', function(){
+  		const initialState = {
+			userData: null,
+			candidates: [],
+			error: null
+		};
+		const nextState = appReducer(initialState, userActions.fetchSearchSuccess([{name: 'Audrey', type: 'vocalist'}]));
+		nextState.should.deep.equal({userData: null, candidates: [{name: 'Audrey', type: 'vocalist'}], error: null});
+  });
+});

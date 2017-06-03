@@ -14,3 +14,10 @@ addons:
     - g++-4.8
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: tZdTotpr1F2q3WzmzD75gxOZgzGNqY0enbvZ8Qao20MqqZvt1oSqz1giWOef0fvQ6mtzEb64mOFWr+bl+wVleGM4OVJpnq15ACTRjcbXKruFgs/r7NgaSrVnZiVrbXuhNEnaWoJ11Oto4l+2Z/orhPnwjNDIWVLJXwRqlUqzFqzHz1Dlhai+DTpKtlwcEYmdSd1gi2i3Jb7XGwdpMBh+/ehYf5/E7gQRiaODJXJO2Vtez36QgomLYGyHOEuhoy63RBQ4G1oEqRxia+II2cNfbXgLohxe6PXilrvllMcg6t/Cu8/sQc4bNVZTpIIz7NKk9BpTE5zXy3HVYbBBp5w2x+XnrXUfvyDG6vVWVTBpV6eGLjx2pC4xS7eBI5mrDAtyJJRPFXuExYAbU88uy5EJxP1pBIbzgmfVOMIN1mq/y35Z2lysrhFgjogGmdwGogYk4ZEdHa3XyeDB3xNoGsbHSlNGPzR3jPWzZNa0vJe/PPIk2HF78TUiMvEK1U97RG2sIYFJA4PDX+minn+4Ba+IYmwT3YjV4FFXQA6nBXII7nfvg2G6Ou9T4dyyxd2c2l4xH47Rbrt/x2r04cNzkDj03H+T9UCSQxHkImQHAymELXYpXSyHFP0kQTKwyevCGMKRc24RjtznozZ8QIacjolEEjk2lA+3jmnGHkScFszeVkQ=
+  app: shrouded-ocean-80561
+  on:
+    repo: bernadettekelly/collaboration-space

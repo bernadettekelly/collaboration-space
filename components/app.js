@@ -8,17 +8,10 @@ import Edit from './page2_Edit';
 import Search from './page2_Search';
 import Title from './title';
 import LandingPage from './LandingPage';
-//const SignUpWrapper = function() {
-//	return (
-//		<SignUp
-//			title = "Collaboration Space"
-//			subtitle= "Welcome to Collaboration Space - a place for New York City musicians to make connections and work together."/>
-//		);
-//}
+
 
 export default function App(props) {
 	return (
-		//<Title />
 		<main>
 			<Provider store={store}>
 				<Router history={hashHistory}>

@@ -6,7 +6,6 @@ import * as userActions from '../actions/index';
 export class Edit extends React.Component {
 	constructor(props) {
     super(props);
-    //this.fetchEditSearchSuccess = this.fetchEditSearchSuccess.bind(this);
     this.state = {
       firstName: null,
       lastName: null,
@@ -43,13 +42,7 @@ export class Edit extends React.Component {
       if(this.props.appData.userData) hashHistory.push('/Search');
     }
 
-  //fetchEditSearchSuccess(e) {
-  //e.preventDefault()  
-  //this.props.dispatch(userActions.fetchEditSearchSuccess());
-  //}
-  //
  
-  //
   fetchLogOut(e){
     this.props.dispatch(userActions.fetchLogOut())
   }
