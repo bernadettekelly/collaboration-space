@@ -9,9 +9,13 @@ collaboration work they may be looking for. On the search page, users can search
 Documentation of API:
 
 URL_USERS - stores all user profiles.
+
 URL_LOGIN - used for a user to log in and begin a new session.
+
 URL_LOGOUT - used to end a user’s session.
+
 URL_ID - stores profile data by ID.
+
 URL_USERS_EDITS - allows users to access their daved data and make changes.
 Technology used:
 
