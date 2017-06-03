@@ -17,6 +17,7 @@ URL_LOGOUT - used to end a user’s session.
 URL_ID - stores profile data by ID.
 
 URL_USERS_EDITS - allows users to access their daved data and make changes.
+
 Technology used:
 
 For this app, Node.js was used to write the API, while Express was used as the web framework. NPM was used as the package manager, and MongoDB for the database manager. For testing, I used the Mocha framework with the chai library and Mongoose schemas to express expected value types.
