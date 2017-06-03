@@ -1,6 +1,6 @@
 var URL_USERS = "https://shrouded-ocean-80561.herokuapp.com/users"
-var URL_LOGIN = "https://shrouded-ocean-80561.herokuapp.com/login"
-var URL_LOGOUT = "https://shrouded-ocean-80561.herokuapp.com/logout"
+var URL_LOGIN = "https://shrouded-ocean-80561.herokuapp.com/users/login"
+var URL_LOGOUT = "https://shrouded-ocean-80561.herokuapp.com/users/logout"
 var URL_ID = "https://shrouded-ocean-80561.herokuapp.com/users/id/"
 var URL_USERS_EDITS = "https://shrouded-ocean-80561.herokuapp.com/users/"
 
