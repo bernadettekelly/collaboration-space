@@ -45,8 +45,7 @@ render(){
 			<section id="SearchSection">
 					<Navbar isLoggedIn={appData.userData !== null} onLogOut={this.fetchLogOut} />
   					<form id="LandingForm" form action="#" method="post">
-  					<div className="columns is-multiline is-mobile">
-              			<div className="column is-one-third">
+  					
 							<section className="Category_Dropdown">
 								<label htmlFor="Category-Dropdown">Type</label>
 								<div className="field">
@@ -61,8 +60,8 @@ render(){
 								</p>
 								</div>
 							</section>
-						</div>
-						<div className="column is-one-third">
+						
+						
 							<section className="Location_Dropdown">
                     			<label htmlFor="Location">Location</label>
                     			<div className="field">
@@ -79,11 +78,11 @@ render(){
                         		</p>
                         		</div>
                 	    	</section>
-                    	</div>
-                    	<div className="column">
+                    	
+                    	
 						<a onClick={this.fetchSearch}>Search</a>
-						</div>
-					</div>
+						
+					
 							
 			</form>
 			<div id="myModal" className="modal" style={this.state.modalStyle}>
