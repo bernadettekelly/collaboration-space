@@ -84,7 +84,7 @@ render(){
 						
 					
 							
-			</form>
+				</form>
 			<div id="myModal" className="modal" style={this.state.modalStyle}>
   				<div className="modal-content">
     			<span className="close" onClick={this.closeModal.bind(this)}>&times;</span>

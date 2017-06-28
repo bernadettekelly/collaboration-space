@@ -21,11 +21,18 @@ class Box extends React.Component {
 		return (
 			<div className="box"key=""> 
 				<div className="media-left">
-					<strong>{this.props.item.firstName} {this.props.item.lastName}</strong>
-					{this.props.item.category}<br/>
-					{this.props.item.Location}<br/>
-					{this.props.item.Email}<br/>
-					<a className={this.state.expanded ? 'hidden' : ''} href="#" onClick={this.seeMore.bind(this)}>See more</a>
+					<div className="nameDiv">
+						<strong>{this.props.item.firstName} {this.props.item.lastName}</strong>
+					</div>
+					<div className="locationDiv">
+						{this.props.item.Location}
+					</div>
+					<div className="emailDiv">
+						{this.props.item.Email}
+					</div>
+					<div className="seeDiv">
+						<a className={this.state.expanded ? 'hidden' : ''} href="#" onClick={this.seeMore.bind(this)}>See more</a>
+					</div>
 					<p className={this.state.expanded ? '' : 'hidden'}>{this.props.item.Phone}</p>
 					<p className={this.state.expanded ? '' : 'hidden'}>{this.props.item.Bio}</p>
 					

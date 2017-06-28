@@ -10,6 +10,10 @@ export class SignIn extends React.Component {
 		this.fetchLogInSuccess = this.fetchLogInSuccess.bind(this);
     }
 
+    componentDidMount(){
+    	this.refs.username.focus();
+    }
+
     componentWillReceiveProps(nextProps){
     	console.log("::UPDATED::", this.props.appData.userData);
     	if(nextProps.appData.userData !== null) hashHistory.push('/Search');
@@ -26,6 +30,7 @@ render(){
 	return (
 		<div>
 			<Title size="is-medium"/>
+			<form id="LoginForm" action="#" method="post" onSubmit={this.fetchLogInSuccess}>
 			<section id="SignInSection">
 				<div className="columns is-gapless is-multiline is-mobile">
               		<div className="column is-one-quarter">
@@ -55,11 +60,12 @@ render(){
 						<div className="fun_mic"><img src="/assets/mic.png"/></div>
 					</div>
 				</div>
-				<a onClick={this.fetchLogInSuccess}>Log In</a>
+				<input className="button is-primary" type="submit" value="Log In" />
 				<div>
 				<Link to="SignUp">Don't have an account? Sign up here</Link>
 				</div>
 			</section>
+			</form>
 		</div>
 	);
   }

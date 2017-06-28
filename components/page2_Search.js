@@ -78,7 +78,7 @@ render(){
 					</form>
   				<section id = "results_container">
 					<div className="columns">
-        				<div className="column is-one-third">
+        				<div className="column is-9">
 					{
 						appData.candidates.map((item, index) => {
 							return (

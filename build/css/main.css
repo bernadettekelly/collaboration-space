@@ -87,7 +87,8 @@ body {
 }
 
 .box {
-
+	overflow: hidden;
+	position: relative;
 }
 
 #results_container {
@@ -211,6 +212,29 @@ a.nav-item {
 	margin-left: 10px;
 }
 
+.nameDiv {
+	float: left;
+    margin-right: 10px;
+}
+
+.locationDiv {
+	float: left;
+    margin-right: 10px;
+}
+
+.emailDiv {
+	float: left;
+    margin-right: 10px;
+}
+
+.column {
+	margin: 0 auto;
+}
+
+.seeDiv {
+	float: right;
+}
+
 .modal {
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -230,7 +254,7 @@ a.nav-item {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -269,4 +293,7 @@ a.nav-item {
 .x {
 	font-size: 35px;
 	color: #00d1b2;
+	position: absolute;
+	top: 0;
+	right: 10px;
 }
