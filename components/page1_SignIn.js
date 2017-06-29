@@ -52,7 +52,7 @@ render(){
 						<div className="field">
   							<label htmlFor="label">Password</label>
   							<p className="control">
-    						<input className="input" type="text" ref="password"/>
+    						<input className="input" type="password" ref="password"/>
   							</p>
 						</div>
 					</div>
