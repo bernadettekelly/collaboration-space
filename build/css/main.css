@@ -87,8 +87,9 @@ body {
 }
 
 .box {
-
-}
+    overflow: hidden;
+    position: relative;
+  }
 
 #results_container {
 	margin-top: 20px;
@@ -206,6 +207,7 @@ a.nav-item {
 	margin-right: 10px;
 }
 
+
 .column.is-one-third {
 	margin-left: 10px;
 }
@@ -220,7 +222,7 @@ a.nav-item {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -266,7 +268,34 @@ a.nav-item {
 	display: none;
 }
 
+.nameDiv {
+     float: left;
+     margin-right: 10px;
+ }
+ 
+ .locationDiv {
+     float: left;
+     margin-right: 10px;
+ }
+ 
+ .emailDiv {
+     float: left;
+     margin-right: 10px;
+ }
+ 
+ .seeDiv {
+     float: right;
+ }
+ 
+
 .x {
 	font-size: 35px;
 	color: #00d1b2;
+	position: absolute;
+    top: 0;
+    right: 10px;
 }
+
+.is-9 {
+	margin: 0 auto;
+  }
