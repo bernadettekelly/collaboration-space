@@ -15,7 +15,7 @@ export const appReducer = (state=initialSignUpState, action) => {
 	}
 
 	if (action.type === userActions.FETCH_LOGIN_SUCCESS) {
-	return {...state, userData: action.userData, candidates: [], error: null};
+	return {...state, userData: action.userData, error: null};
 	}
 	if (action.type === userActions.FETCH_LOGIN_ERROR){
 		return {...state, error: action.error};

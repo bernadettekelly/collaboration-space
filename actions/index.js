@@ -1,16 +1,10 @@
 
-var URL_USERS = "https://shrouded-ocean-80561.herokuapp.com/users"
-var URL_LOGIN = "https://shrouded-ocean-80561.herokuapp.com/users/login"
-var URL_LOGOUT = "https://shrouded-ocean-80561.herokuapp.com/users/logout"
-var URL_ID = "https://shrouded-ocean-80561.herokuapp.com/users/id/"
-var URL_USERS_EDITS = "https://shrouded-ocean-80561.herokuapp.com/users/"
-
-//var BASE_URL = "http://localhost:8080";
-//var URL_USERS = BASE_URL+"/users"
-//var URL_LOGIN = BASE_URL+"/users/login"
-//var URL_LOGOUT = BASE_URL+"/users/logout"
-//var URL_ID = BASE_URL+"/users/id/"
-//var URL_USERS_EDITS = BASE_URL+"/users/"
+var BASE_URL = "https://shrouded-ocean-80561.herokuapp.com";
+var URL_USERS = BASE_URL+"/users"
+var URL_LOGIN = BASE_URL+"/users/login"
+var URL_LOGOUT = BASE_URL+"/users/logout"
+var URL_ID = BASE_URL+"/users/id/"
+var URL_USERS_EDITS = BASE_URL+"/users/"
 
 import axios from 'axios';
 

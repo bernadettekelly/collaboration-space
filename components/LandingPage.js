@@ -23,8 +23,9 @@ export class LandingPage extends React.Component {
 
 	fetchSearch(e) {
 		e.preventDefault();
-		if(this.props.appData.userData==null) hashHistory.push('/SignIn');
 		this.props.dispatch(userActions.fetchSearch(this.refs.type.value, this.refs.location.value));
+		if(this.props.appData.userData==null) hashHistory.push('/SignIn');
+		
 	}
 
 	openModal() {
