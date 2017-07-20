@@ -113,7 +113,7 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
   	})
   	.catch(function (err) {
   		console.error(err);
-		dispatch(fetchSearchError(err));
+		dispatch(fetchSearchError("There are no results to display"));
   	})
   	
   }
