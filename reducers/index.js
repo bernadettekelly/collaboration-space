@@ -46,7 +46,7 @@ export const appReducer = (state=initialSignUpState, action) => {
 		return {...state, candidates: action.candidates, error: null};
 	}
 	if (action.type === userActions.FETCH_SEARCH_ERROR){
-		return {...state, error: "There are no results to display"};
+		return {...state, error: action.error};
 	}
 
 	return state;

@@ -109,11 +109,16 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
 	   })
 	.then(function (response) {
   		console.log("SEARCH:: ",response);
-		dispatch(fetchSearchSuccess(response.data));
+  		if(response.data.length > 0){
+  			dispatch(fetchSearchSuccess(response.data));
+  		}else{
+  			dispatch(fetchError("There's no data to display"));
+  		}
+		
   	})
   	.catch(function (err) {
   		console.error(err);
-		dispatch(fetchSearchError("There are no results to display"));
+		dispatch(fetchSearchError(err));
   	})
   	
   }
