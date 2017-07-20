@@ -78,6 +78,9 @@ render(){
 					</form>
   				<section id = "results_container">
 					<div className="columns">
+						<div className="columns is-9">
+							{appData.error}
+						</div>
         				<div className="column is-9">
 					{
 						appData.candidates.map((item, index) => {
