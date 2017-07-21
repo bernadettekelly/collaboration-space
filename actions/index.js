@@ -1,10 +1,12 @@
 
-var BASE_URL = "https://shrouded-ocean-80561.herokuapp.com";
+var BASE_URL = "http://localhost:8080"
 var URL_USERS = BASE_URL+"/users"
 var URL_LOGIN = BASE_URL+"/users/login"
 var URL_LOGOUT = BASE_URL+"/users/logout"
 var URL_ID = BASE_URL+"/users/id/"
 var URL_USERS_EDITS = BASE_URL+"/users/"
+
+//"https://shrouded-ocean-80561.herokuapp.com";
 
 import axios from 'axios';
 
@@ -112,7 +114,7 @@ export const fetchEdit = (firstName, lastName, category, location, email, phone,
   		if(response.data.length > 0){
   			dispatch(fetchSearchSuccess(response.data));
   		}else{
-  			dispatch(fetchError("There's no data to display"));
+  			dispatch(fetchSearchError("There are no results to display"));
   		}
 		
   	})

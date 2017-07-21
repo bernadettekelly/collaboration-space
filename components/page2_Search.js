@@ -30,7 +30,7 @@ export class Search extends React.Component {
 
 render(){
 	const {appData} = this.props;
-	console.log(appData.candidates);
+	console.log(appData);
 	return (
 		<div>
 			<Title size="is-medium"/>
@@ -78,7 +78,7 @@ render(){
 					</form>
   				<section id = "results_container">
 					<div className="columns">
-						<div className="columns is-9">
+						<div className="column is-half is-offset-one-quarter">
 							{appData.error}
 						</div>
         				<div className="column is-9">

@@ -67,7 +67,7 @@ render(){
   const {appData} = this.props; 
 
 	return (
-		<div>
+		<div className="editDiv">
       <div className="container">
 		    <section id="EditSection">
           
