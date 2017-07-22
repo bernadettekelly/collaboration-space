@@ -22,14 +22,23 @@ export class Search extends React.Component {
 		this.props.dispatch(userActions.fetchLogOut())
 	}
 
+	componentDidMount(){
+		document.body.style.height = "100%";
+	}
+
 	componentDidUpdate() {
 		console.log('update', this.props.appData.userData);
-    if(this.props.appData.userData==null) hashHistory.push('/');
-  }
+    	if(this.props.appData.userData==null) hashHistory.push('/');
+  	}
+
+  	componentWillUnmount(){
+  		document.body.style.height = null;
+  	}
 
 
 render(){
 	const {appData} = this.props;
+	if(appData.candidates.length > 1) document.body.style.height = "auto";
 	console.log(appData);
 	return (
 		<div>
@@ -77,10 +86,10 @@ render(){
 					
 					</form>
   				<section id = "results_container">
-					<div className="columns">
-						<div className="column is-half is-offset-one-quarter">
+  					<div className="errorDiv">
 							{appData.error}
 						</div>
+					<div className="columns">
         				<div className="column is-9">
 					{
 						appData.candidates.map((item, index) => {
