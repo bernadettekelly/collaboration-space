@@ -71,8 +71,9 @@ render(){
       <div className="container">
         <Link className="return" to="Search">Return to search</Link>
         <a className="out" onClick={this.fetchLogOut}>Log Out</a>
+        <div className="fun_earphones"><img src="/assets/earphones.png"/></div>
 		  <section id="EditSection">
-          <div className="columns is-gapless is-multiline is-mobile">
+          <div className="columns">
               <div className="column is-three-quarters">
               <div className="EditTitle">Edit</div>
             	 <div className="field">
@@ -83,7 +84,6 @@ render(){
 				      </div>
              </div>
              <div className="column is-three-quarters">
-              <div className="fun_earphones"><img src="/assets/earphones.png"/></div>
             </div>
         </div>
         
