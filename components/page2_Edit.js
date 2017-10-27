@@ -75,7 +75,7 @@ render(){
             <a className="out" onClick={this.fetchLogOut}>Log Out</a>
          
         <div className="columns is-gapless is-multiline is-mobile">
-              <div className="column is-one-quarter">
+              <div className="column is-three-quarters">
               <div className="EditTitle">Edit</div>
             	 <div className="field">
   					     <label htmlFor="label">First Name</label>
@@ -90,7 +90,7 @@ render(){
         </div>
         
         <div className="columns">
-             <div className="column is-one-quarter">
+             <div className="column is-three-quarters">
 				        <div className="field">
   					     <label htmlFor="label">Last Name</label>
   					     <p className="control has-icons-left has-icons-right">
@@ -107,7 +107,7 @@ render(){
         </div>
 
         <div className="columns is-gapless is-multiline is-mobile">
-          <div className="column is-one-quarter">
+          <div className="column is-three-quarters">
 				    <div className="field">
   					 <label htmlFor="label">Email</label>
   						<p className="control has-icons-left has-icons-right">
@@ -127,7 +127,7 @@ render(){
         </div>
 
         <div className="columns">
-          <div className="column is-one-quarter">
+          <div className="column is-three-quarters">
             <div className="field">
   					 <label htmlFor="label">Phone Number</label>
   					 <p className="control">
@@ -138,7 +138,7 @@ render(){
         </div>
 
         <div className="columns">
-          <div className="column is-one-quarter">
+          <div className="column is-three-quarters">
 				    <div className="field">
   					 <label htmlFor="label">Location</label>
   						<p className="control">
@@ -160,7 +160,7 @@ render(){
        </div>
 
       <div className="columns is-gapless is-multiline is-mobile">
-        <div className="column is-one-quarter">
+        <div className="column is-three-quarters">
 				  <div className="field">
   					<label htmlFor="label">Type</label>
   						<p className="control">

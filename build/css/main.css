@@ -368,6 +368,28 @@ a.nav-item {
 		width: 48%;
 		top: 68%;
 	}
+	.fun_drums {
+	float: right;
+	position: absolute;
+	right: 2%;
+	top: 8%;
+	width: 60%;
+	}
+	.fun_note {
+	float: right;
+	position: absolute;
+	right: 5%;
+	top: 30%;
+	width: 20%;
+	}
+
+	.fun_earphones {
+	float: right;
+	position: absolute;
+	top: 77%;
+	right: 5%;
+	width: 30%;
+	}
 }
 
 @media only screen and (min-width: 375px) {
@@ -559,6 +581,26 @@ a.nav-item {
 	position: absolute;
 	right: 2%;
 	top: 60%;
+	}
+
+	.fun_drums {
+	float: right;
+	position: absolute;
+	right: 2%;
+	top: 8%;
+	}
+	.fun_note {
+	float: right;
+	position: absolute;
+	right: 55%;
+	top:46%;
+	}
+
+	.fun_earphones {
+	float: right;
+	position: absolute;
+	top: 77%;
+	right: 5%;
 	}
 
 }
