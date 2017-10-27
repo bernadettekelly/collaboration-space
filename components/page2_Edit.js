@@ -69,12 +69,10 @@ render(){
 	return (
 		<div className="editDiv">
       <div className="container">
-		    <section id="EditSection">
-          
-            <Link className="return" to="Search">Return to search</Link>
-            <a className="out" onClick={this.fetchLogOut}>Log Out</a>
-         
-        <div className="columns is-gapless is-multiline is-mobile">
+        <Link className="return" to="Search">Return to search</Link>
+        <a className="out" onClick={this.fetchLogOut}>Log Out</a>
+		  <section id="EditSection">
+          <div className="columns is-gapless is-multiline is-mobile">
               <div className="column is-three-quarters">
               <div className="EditTitle">Edit</div>
             	 <div className="field">
@@ -85,7 +83,7 @@ render(){
 				      </div>
              </div>
              <div className="column is-three-quarters">
-              <div className="fun_drums"><img src="/assets/drums.png"/></div>
+              <div className="fun_earphones"><img src="/assets/earphones.png"/></div>
             </div>
         </div>
         
@@ -155,7 +153,7 @@ render(){
 				    </div>
          </div>
          <div className="column is-three-quarters">
-         <div className="fun_earphones"><img src="/assets/earphones.png"/></div>
+         <div className="fun_drums"><img src="/assets/drums.png"/></div>
          </div>
        </div>
 

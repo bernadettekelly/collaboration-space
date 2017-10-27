@@ -372,8 +372,8 @@ a.nav-item {
 	float: right;
 	position: absolute;
 	right: 2%;
-	top: 8%;
-	width: 60%;
+	top: 58%;
+	width: 50%;
 	}
 	.fun_note {
 	float: right;
@@ -386,7 +386,7 @@ a.nav-item {
 	.fun_earphones {
 	float: right;
 	position: absolute;
-	top: 77%;
+	top: 5%;
 	right: 5%;
 	width: 30%;
 	}
@@ -483,6 +483,20 @@ a.nav-item {
 	top: 45%;
 	width: 50%;
 	}
+	.fun_drums {
+	float: right;
+	position: absolute;
+	right: 15%;
+	top: 95%;
+	width: 30%;
+	}
+	.fun_note {
+	float: right;
+	position: absolute;
+	right: 35%;
+	top: 30%;
+	width: 20%;
+	}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -517,6 +531,12 @@ a.nav-item {
 	.Location_Dropdown {
 	display: inline-block;
 	margin-right: 15px;
+	}
+	.fun_note {
+	float: right;
+	position: absolute;
+	right: 55%;
+	top:46%;
 	}
 }
 
