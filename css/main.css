@@ -88,6 +88,7 @@ body {
 
 html {
 	height: 100%;
+	background-image: url(brickwall_@2X.png);
 }
 
 .box {
@@ -235,7 +236,8 @@ a.nav-item {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 70%; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
 }
 
 /* The Close Button */
@@ -296,6 +298,7 @@ a.nav-item {
 	position: absolute;
     top: 0;
     right: 10px;
+    cursor: pointer;
 }
 
 .is-9 {
@@ -307,12 +310,257 @@ a.nav-item {
 	font-size: 24px;
 }
 
+@media only screen and (min-width: 320px) {
+	body {
+		height: 152%;
+	}
+	.fun_mic {
+		width: 150px;
+		right: 0%;
+		top: 82%;
+	}
+
+	#LandingForm {
+		display: block;
+		width: 50%;
+		margin: 0 auto
+	}
+
+	.nav-right {
+		top: 0%;
+		height: 52px;
+	}
+	#myModal {
+		top: 5%;
+	}
+	.input {
+		width: 200px;
+	}
+	#SignInSection {
+		width: 250%;
+	}
+	.noAccount {
+		width: 25%;
+	}
+	#LoginForm {
+		margin-left: 29%;
+	}
+	.Category_Dropdown, .Location_Dropdown {
+		display: block;
+		width: 50%;
+		margin: 0 auto;
+	}
+	h1 {
+		padding-top: 40px;
+	}
+	.is-tab {
+		display: inline-block;
+	}
+	.fun {
+		width: 30%;
+	}
+	.fun_darth {
+		width: 35%;
+		top: 23%;
+		right: 1%;
+	}
+	.fun_band {
+		width: 48%;
+		top: 68%;
+	}
+}
+
+@media only screen and (min-width: 375px) {
+	body {
+		height: 110%;
+	}
+
+	.fun_music {
+		top: 55%;
+		right: 5%;
+	}
+	.fun_band {
+		width: 48%;
+		top: 66%;
+	}
+}
+
+@media only screen and (min-width: 414px) {
+	body {
+		height: 100%;
+	}
+	.noAccount {
+		width: 30%;
+	}
+	.fun_band {
+		width: 48%;
+		top: 64%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body {
+		overflow: hidden;
+		padding-bottom: 250px;
+		height: 100%;
+	}
+
+	.fun_music {
+		width: 300px;
+		right: 15%;
+		top: 40%;
+	}
+	.nav-menu {
+		position: relativ
+	}
+	#SignInSection {
+		width: 150%;
+	}
+	.noAccount {
+		width: 100%;
+	}
+	#LoginForm {
+		margin-left: 38%;
+	}
+	.Category_Dropdown {
+	margin-right: 20px;
+	display: inline-block;
+	width: 25%;
+	margin: 0 auto;
+	}
+
+	.Location_Dropdown {
+	display: inline-block;
+	margin-right: 15px;
+	width: 25%;
+	margin: 0 auto;
+	}
+	#LandingForm {
+		width: 100%;
+		margin: 0 auto
+	}
+	.fun {
+	float: right;
+	position: absolute;
+	right: 8%;
+	top: 1%;
+	}
+
+	.fun_darth {
+	position: absolute;
+	text-align: center;
+	right: 39%;
+	top: 23%;
+	width: 30%;
+	}
+
+	.fun_band {
+	float: right;
+	position: absolute;
+	right: 2%;
+	top: 45%;
+	width: 50%;
+	}
+}
+
 @media only screen and (min-width: 1024px) {
+	body {
+	overflow: hidden;
+	padding-bottom: 250px;
+	height: 100%;
+	}
+	.fun_mic {
+		top: 43%;
+		right: 30%;
+		width: 300px;
+	}
+	
+	#LandingForm {
+		display: inherit;
+		text-align: center;
+	}
+	#SignInSection {
+		.nav-right {
+		top: 0%;
+		height: 52px;
+	}
+	h1 {
+		padding-top: 1024px;
+	}
+	.Category_Dropdown {
+	margin-right: 20px;
+	display: inline-block;
+	}
+
+	.Location_Dropdown {
+	display: inline-block;
+	margin-right: 15px;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
 	body {
 	height: auto;
 	overflow: hidden;
 	padding-bottom: 250px;
+	height: 150%;
 	}
+	.fun_mic {
+		top: 75%;
+		right: 30%;
+	}
+	
+	#LandingForm {
+		display: inherit;
+		text-align: center;
+	}
+	#myModal {
+		top: 0%;
+	}
+	.nav-right {
+		top: 0%;
+		height: 52px;
+	}
+	#SignInSection {
+		width: 100%;
+	}
+	#LoginForm {
+		margin-left: 40%;
+	}
+	.Category_Dropdown {
+	margin-right: 20px;
+	display: inline-block;
+	width: 15%;
+	margin: 0 auto;
+	}
+
+	.Location_Dropdown {
+	display: inline-block;
+	margin-right: 15px;
+	width: 15%;
+	margin: 0 auto;
+	}
+	.fun {
+	float: right;
+	position: absolute;
+	right: 8%;
+	top: 1%;
+	}
+
+	.fun_darth {
+	position: absolute;
+	text-align: center;
+	right: 39%;
+	top: 23%;
+	}
+
+	.fun_band {
+	float: right;
+	position: absolute;
+	right: 2%;
+	top: 60%;
+	}
+
 }
 
 

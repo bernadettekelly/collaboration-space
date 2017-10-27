@@ -26,7 +26,7 @@ render(){
         <div className="container">
         <section>
             <div className="columns is-gapless is-multiline is-mobile">
-              <div className="column is-one-quarter">
+              <div className="column is-three-quarters">
                   <div className="SignUpTitle">Sign Up</div>
             	       <div className="field">
   					         <label htmlFor="label">First Name</label>
@@ -40,7 +40,7 @@ render(){
                 </div>
             </div>
              <div className="columns is-gapless is-multiline is-mobile">
-                 <div className="column is-one-quarter">
+                 <div className="column is-three-quarters">
                   <div className="field">
   					      <label htmlFor="label">Last Name</label>
   					      <p className="control has-icons-left has-icons-right">
@@ -98,7 +98,7 @@ render(){
             </div>
 
             <div className="columns is-gapless is-multiline is-mobile">
-              <div className="column is-one-quarter">
+              <div className="column is-three-quarters">
                 <div className="field">
   					       <label htmlFor="label">Phone Number</label>
   					       <p className="control">

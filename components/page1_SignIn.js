@@ -43,9 +43,6 @@ render(){
 							</div>
 						
 					</div>
-						<div className="column is-three-quarters">
-							<div className="fun_music"><img src="/assets/music.png"/></div>
-						</div>
 				</div>
            		<div className="columns is-gapless is-multiline is-mobile">
           			<div className="column is-one-quarter">
@@ -56,12 +53,10 @@ render(){
   							</p>
 						</div>
 					</div>
-					<div className="column is-three-quarters">
-						<div className="fun_mic"><img src="/assets/mic.png"/></div>
-					</div>
+					
 				</div>
 				<input className="button is-primary" type="submit" value="Log In" />
-				<div>
+				<div className="noAccount">
 				<Link to="SignUp">Don't have an account? Sign up here</Link>
 				</div>
 			</section>
