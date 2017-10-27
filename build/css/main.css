@@ -310,6 +310,10 @@ a.nav-item {
 	font-size: 24px;
 }
 
+.editDiv {
+	padding-top: 10px;
+}
+
 @media only screen and (min-width: 320px) {
 	body {
 		height: 152%;

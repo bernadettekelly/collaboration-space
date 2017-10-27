@@ -120,7 +120,7 @@ render(){
 				    </div>
           </div>
               <div className="column is-three-quarters">
-              <div className="fun_note"><img src="/assets/note.gif"/></div>
+              <div className="fun_note"><img src="/assets/mic.png"/></div>
               </div>
         </div>
 
