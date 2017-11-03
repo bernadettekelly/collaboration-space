@@ -53,7 +53,7 @@ render(){
   				<div className="modal-content">
     			<span className="close" onClick={this.closeModal.bind(this)}>&times;</span>
     			<p>Welcome! To log in, you may use our created login - 
-    			username: audrey1, password: cat. Feel free to edit 
+    			  <span className="modalSpan">username: audrey1, password: cat.</span> Feel free to edit 
     			Audrey's profile if you like and search for other musicians
     			on our search page. Thanks for visiting!</p>
    				<section className="checkSection">

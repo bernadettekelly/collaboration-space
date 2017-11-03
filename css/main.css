@@ -361,6 +361,10 @@ a.nav-item {
 	font-weight: bold;
 }
 
+.modalSpan {
+	font-weight: bold;
+}
+
 
 @media only screen and (min-width: 320px) {
 	body {
@@ -555,7 +559,7 @@ a.nav-item {
 	body {
 	overflow: hidden;
 	padding-bottom: 250px;
-	height: 100%;
+	height: auto;
 	}
 	.fun_mic {
 		top: 43%;
@@ -597,7 +601,7 @@ a.nav-item {
 	height: auto;
 	overflow: hidden;
 	padding-bottom: 250px;
-	height: 150%;
+	height: auto;
 	}
 	.fun_mic {
 		top: 75%;

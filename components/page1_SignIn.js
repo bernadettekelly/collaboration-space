@@ -29,7 +29,7 @@ render(){
 	const {appData} = this.props; 
 	return (
 		<div>
-			<Title size="is-medium"/>
+			
 			<form id="LoginForm" action="#" method="post" onSubmit={this.fetchLogInSuccess}>
 			<section id="SignInSection">
 				<div className="columns is-gapless is-multiline is-mobile">
