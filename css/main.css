@@ -446,6 +446,12 @@ a.nav-item {
 	right: 5%;
 	width: 30%;
 	}
+	.checkbox {
+	width: 25px;
+	top: 88%;
+	right: 20%;
+	position: absolute;
+}
 }
 
 @media only screen and (min-width: 375px) {
@@ -461,6 +467,12 @@ a.nav-item {
 		width: 48%;
 		top: 66%;
 	}
+	.checkbox {
+	width: 25px;
+	top: 85%;
+	right: 43%;
+	position: absolute;
+	}
 }
 
 @media only screen and (min-width: 414px) {
@@ -473,6 +485,12 @@ a.nav-item {
 	.fun_band {
 		width: 48%;
 		top: 64%;
+	}
+	.checkbox {
+	width: 25px;
+	top: 85%;
+	right: 50%;
+	position: absolute;
 	}
 }
 
@@ -553,6 +571,12 @@ a.nav-item {
 	top: 30%;
 	width: 20%;
 	}
+	.checkbox {
+	width: 25px;
+	top: 70%;
+	right: 36%;
+	position: absolute;
+	}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -593,6 +617,12 @@ a.nav-item {
 	position: absolute;
 	right: 55%;
 	top:46%;
+	}
+	.checkbox {
+	width: 25px;
+	top: 70%;
+	right: 50%;
+	position: absolute;
 	}
 }
 
@@ -677,6 +707,12 @@ a.nav-item {
 	position: absolute;
 	top: 77%;
 	right: 5%;
+	}
+	.checkbox {
+	width: 25px;
+	top: 61%;
+	right: 66%;
+	position: absolute;
 	}
 
 }
