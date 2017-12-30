@@ -67,7 +67,7 @@ render(){
   				</div>
 	}; 
 	return (
-		<div>
+		<div className="landingBody">
 			<Title size="is-fullheight"/>
 			<section id="SearchSection">
 					<Navbar isLoggedIn={appData.userData !== null} onLogOut={this.fetchLogOut} />

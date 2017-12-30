@@ -45,6 +45,10 @@ h2 {
 	color: #8827E8
 }
 
+.landingBody {
+	height: auto !important;
+}
+
 .EditTitle {
 	margin-bottom: 20px;
 	font-family: 'Covered By Your Grace', cursive;
@@ -379,8 +383,9 @@ a.nav-item {
 
 	#LandingForm {
 		display: block;
-		width: 50%;
+		width: 100%;
 		margin: 0 auto
+		padding-top: 5px;
 	}
 
 	.nav-right {
@@ -499,7 +504,7 @@ a.nav-item {
 	body {
 		overflow: hidden;
 		padding-bottom: 250px;
-		height: 100%;
+		height: auto;
 	}
 
 	.fun_music {
@@ -533,6 +538,7 @@ a.nav-item {
 	#LandingForm {
 		width: 100%;
 		margin: 0 auto
+		padding-top: 5px;
 	}
 	.fun {
 	float: right;
@@ -580,9 +586,9 @@ a.nav-item {
 
 @media only screen and (min-width: 1024px) {
 	body {
+	height: auto;
 	overflow: hidden;
 	padding-bottom: 250px;
-	height: auto;
 	}
 	.fun_mic {
 		top: 43%;
@@ -593,14 +599,13 @@ a.nav-item {
 	#LandingForm {
 		display: inherit;
 		text-align: center;
+		padding-top: 5px;
 	}
 	#SignInSection {
 		top: 0%;
-		height: 52px;
+		min-height: 52px;
 	}
-	h1 {
-		padding-top: 1024px;
-	}
+	
 	.Category_Dropdown {
 	margin-right: 20px;
 	display: inline-block;
@@ -622,6 +627,9 @@ a.nav-item {
 	right: 50%;
 	position: absolute;
 	}
+	.landingBody {
+	height: auto !important;
+	}
 }
 
 @media only screen and (min-width: 1280px) {
@@ -629,7 +637,6 @@ a.nav-item {
 	height: auto;
 	overflow: hidden;
 	padding-bottom: 250px;
-	height: auto;
 	}
 	.fun_mic {
 		top: 75%;
