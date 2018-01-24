@@ -42,11 +42,11 @@ render(){
 	console.log(appData);
 	return (
 		<div>
-			<Title size="is-medium"/>
+			<Title size="is-small"/>
 			<section id="SearchSection">
 			<Navbar isLoggedIn={appData.userData !== null} onLogOut={this.fetchLogOut} />
 			
-  					<form id="SearchForm" form action="#" method="post">
+  					<form id="LandingForm" action="#" method="post" onSubmit={this.fetchSearch}>
   					
 							<section className="Category_Dropdown">
 								<label htmlFor="Category-Dropdown">Type</label>
@@ -80,8 +80,8 @@ render(){
                         		</div>
                 	    	</section>
                     	
-                    	
-						<a onClick={this.fetchSearch}>Search</a>
+                    	<input className="button is-primary search" type="submit" value="Search" />
+						
 						
 					
 					</form>

@@ -52,7 +52,7 @@ render(){
 		modal = <div id="myModal" className="modal" style={this.state.modalStyle}>
   				<div className="modal-content">
     			<span className="close" onClick={this.closeModal.bind(this)}>&times;</span>
-    			<p>Welcome! To log in, you may use our created login - 
+    			<p>Welcome! To log in, you may use our created login -  
     			  <span className="modalSpan">username: audrey1, password: cat.</span> Feel free to edit 
     			Audrey's profile if you like and search for other musicians
     			on our search page. Thanks for visiting!</p>
@@ -68,10 +68,11 @@ render(){
 	}; 
 	return (
 		<div className="landingBody">
-			<Title size="is-fullheight"/>
+			<Title size="is-small"/>
 			<section id="SearchSection">
 					<Navbar isLoggedIn={appData.userData !== null} onLogOut={this.fetchLogOut} />
-  					<form id="LandingForm" form action="#" method="post">
+  				
+  					<form id="LandingForm" action="#" method="post" onSubmit={this.fetchSearch}>
   					
 							<section className="Category_Dropdown">
 								<label htmlFor="Category-Dropdown">Type</label>
@@ -106,8 +107,7 @@ render(){
                         		</div>
                 	    	</section>
                     	
-                    	
-						<a onClick={this.fetchSearch}>Search</a>
+                    	<input className="button is-primary landing" type="submit" value="Search" />
 						
 					
 							
