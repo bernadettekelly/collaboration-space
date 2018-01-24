@@ -216,6 +216,11 @@ a.nav-item {
 	font-weight: bold;
 }
 
+a.nav-item:hover {
+	color: white;
+	font-weight: bold;
+}
+
 .nav-right, .nav-left {
 	    background: -webkit-linear-gradient(#19052d, rebeccapurple);
 }
@@ -437,11 +442,12 @@ a.nav-item {
 	.fun_darth {
 		width: 35%;
 		top: 23%;
-		right: 1%;
+		right: -5%;
 	}
 	.fun_band {
 		width: 48%;
 		top: 68%;
+		right: -3%;
 	}
 	.fun_drums {
 	float: right;
@@ -480,6 +486,11 @@ a.nav-item {
 	}
 	.Location_Dropdown {
 		margin-top: 7px;
+	}
+	.container {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
 	}
 }
 
@@ -602,7 +613,7 @@ a.nav-item {
 	float: right;
 	position: absolute;
 	right: 35%;
-	top: 30%;
+	top: 40%;
 	width: 20%;
 	}
 	.checkbox {
