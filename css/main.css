@@ -43,9 +43,9 @@ h2 {
 
 .SignInTitle {
 	margin-bottom: 20px;
-	font-family: 'Covered By Your Grace', cursive;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 200;
 	font-size: 40px;
-	font-weight: bold;
 	background: -webkit-linear-gradient(#19052d, rebeccapurple);
 	 -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
@@ -57,9 +57,9 @@ h2 {
 
 .EditTitle {
 	margin-bottom: 20px;
-	font-family: 'Covered By Your Grace', cursive;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 200;
 	font-size: 40px;
-	font-weight: bold;
 	background: -webkit-linear-gradient(#19052d, rebeccapurple);
 	 -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
@@ -76,13 +76,14 @@ h2 {
 }
 
 .SignUpTitle {
-	font-family: 'Covered By Your Grace', cursive;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 200;
 	font-size: 40px;
 	margin-bottom: 20px;
-	font-weight: bold;
 	background: -webkit-linear-gradient(#19052d, rebeccapurple);
 	 -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
+     margin-top: 10px;
 }
 
 .Category_Dropdown {
@@ -487,10 +488,11 @@ a.nav-item:hover {
 	.Location_Dropdown {
 		margin-top: 7px;
 	}
-	.container {
+	.signupContainer, .editContainer {
     position: relative;
     margin: 0 auto;
-    width: 90%;
+    width: 70%;
+    margin-left: 20%;
 	}
 }
 
@@ -512,6 +514,12 @@ a.nav-item:hover {
 	top: 85%;
 	right: 43%;
 	position: absolute;
+	}
+	.signupContainer, .editContainer {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 20%;
 	}
 }
 
@@ -635,6 +643,12 @@ a.nav-item:hover {
 	font-size: 70px;
 	padding-top: 10px;
 	}
+	.signupContainer, .editContainer {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    margin-left: 35%;
+	}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -685,6 +699,12 @@ a.nav-item:hover {
 	}
 	h2 {
 		width:70%; margin: 0 15%;
+	}
+	.signupContainer, .editContainer {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 40%;
 	}
 }
 
@@ -775,10 +795,15 @@ a.nav-item:hover {
 	right: 66%;
 	position: absolute;
 	}
+	.signupContainer, .editContainer {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    margin-left: 40%;
+	}
 	h2 {
 		width:50%; margin: 0 25%;
 	}
-
 }
 
 

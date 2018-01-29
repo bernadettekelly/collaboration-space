@@ -23,7 +23,7 @@ render(){
   const {appData} = this.props; 
 	return (
 		<div>
-        <div className="container">
+        <div className="container signupContainer">
         <section>
             <div className="columns is-gapless is-multiline is-mobile">
               <div className="column is-three-quarters">
@@ -35,9 +35,7 @@ render(){
   					         </p>
                      </div>
               </div>
-                <div className="column is-three-quarters">
-                  <div className="fun"><img src="/assets/imgres.png"/></div>
-                </div>
+                
             </div>
              <div className="columns is-gapless is-multiline is-mobile">
                  <div className="column is-three-quarters">
@@ -54,9 +52,7 @@ render(){
   					     </p>
 				         </div>
                </div>
-               <div className="column is-three-quarters">
-                <div className="fun_darth"><img src="/assets/darth.png"/></div>
-               </div>
+               
             </div>
             <div className="columns">
                 <div className="column is-one-quarter">
@@ -106,9 +102,7 @@ render(){
   					       </p>
 				        </div>
              </div>
-             <div className="column is-three-quarters">
-              <div className="fun_band"><img src="/assets/band.gif"/></div>
-             </div>
+            
             </div>
 
             <div className="columns">

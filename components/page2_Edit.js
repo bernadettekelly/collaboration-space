@@ -68,7 +68,7 @@ render(){
 
 	return (
 		<div className="editDiv">
-      <div className="container">
+      <div className="container editContainer">
         <Link className="return" to="Search">Return to search</Link>
         <a className="out" onClick={this.fetchLogOut}>Log Out</a>
         <div className="fun_earphones"><img src="/assets/earphones.png"/></div>
@@ -119,9 +119,7 @@ render(){
   						</p>
 				    </div>
           </div>
-              <div className="column is-three-quarters">
-              <div className="fun_note"><img src="/assets/mic.png"/></div>
-              </div>
+             
         </div>
 
         <div className="columns">
@@ -152,9 +150,7 @@ render(){
   						</p>
 				    </div>
          </div>
-         <div className="column is-three-quarters">
-         <div className="fun_drums"><img src="/assets/drums.png"/></div>
-         </div>
+        
        </div>
 
       <div className="columns is-gapless is-multiline is-mobile">
